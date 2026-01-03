@@ -1,36 +1,10 @@
 class Main {
     function void main() {
-        var int location;
-        let location = 0;
-        var int memAddress; 
-        let memAddress = 16384+location;
-        // column 0
-        do Memory.poke(memAddress, 1848);
-        do Memory.poke(memAddress +32, 1848);
-        do Memory.poke(memAddress +64, 14139);
-        do Memory.poke(memAddress +96, 13107);
-        do Memory.poke(memAddress +128, 6966);
-        do Memory.poke(memAddress +160, 6966);
-        do Memory.poke(memAddress +192, 4092);
-        do Memory.poke(memAddress +224, 4092);
-        do Memory.poke(memAddress +256, 2040);
-        do Memory.poke(memAddress +288, 2040);
-        do Memory.poke(memAddress +320, 2040);
-        do Memory.poke(memAddress +352, 4092);
-        do Memory.poke(memAddress +384, 8190);
-        do Memory.poke(memAddress +416, 16383);
-        do Memory.poke(memAddress +448, 16383);
-        do Memory.poke(memAddress +480, 0);
-        do Memory.poke(memAddress +512, 0);
-        do Memory.poke(memAddress +544, 0);
-        do Memory.poke(memAddress +576, 0);
-        do Memory.poke(memAddress +608, 0);
-        do Memory.poke(memAddress +640, 0);
-        do Memory.poke(memAddress +672, 0);
-        do Memory.poke(memAddress +704, 0);
-        do Memory.poke(memAddress +736, 0);
-        do Memory.poke(memAddress +768, 0);
-        do Memory.poke(memAddress +800, 0);
+        var Board board;
+
+        let board = Board.new();
+        do Display.drawBoard(board);
+
         return;
     }
 }

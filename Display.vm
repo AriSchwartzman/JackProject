@@ -1,0 +1,152 @@
+function Display.erase 2
+    push argument 0
+    call Piece.getFileInt 1
+    push constant 16
+    call Math.multiply 2
+    pop local 0
+    push argument 0
+    call Piece.getRank 1
+    push constant 16
+    call Math.multiply 2
+    pop local 1
+    push constant 0
+    call Screen.setColor 1
+    pop temp 0
+    push local 0
+    push local 1
+    push local 0
+    push constant 13
+    add
+    push local 1
+    push constant 13
+    add
+    call Screen.drawRectangle 4
+    pop temp 0
+    push constant 0
+    return
+function Display.drawPiece 7
+    push argument 0
+    call Piece.getFileInt 1
+    push constant 1
+    sub
+    push constant 16
+    call Math.multiply 2
+    pop local 3
+    push argument 0
+    call Piece.getRank 1
+    push constant 1
+    sub
+    push constant 16
+    call Math.multiply 2
+    pop local 4
+    push constant 16384
+    push constant 32
+    push local 4
+    call Math.multiply 2
+    add
+    push local 3
+    push constant 16
+    call Math.divide 2
+    add
+    pop local 6
+    push local 3
+    push constant 16
+    push local 3
+    push constant 16
+    call Math.divide 2
+    call Math.multiply 2
+    sub
+    pop local 5
+    push argument 0
+    call Piece.getType 1
+    push local 5
+    call Sprites.getSprite 2
+    pop local 2
+    push constant 0
+    pop local 0
+    push constant 14
+    pop local 1
+label Display_0
+    push local 0
+    push constant 14
+    lt
+    not
+    if-goto Display_1
+    push constant 32
+    push local 0
+    call Math.multiply 2
+    push local 6
+    add
+    push local 0
+    push local 2
+    add
+    pop pointer 1
+    push that 0
+    call Memory.poke 2
+    pop temp 0
+    push constant 32
+    push local 0
+    call Math.multiply 2
+    push local 6
+    add
+    push constant 1
+    add
+    push local 1
+    push local 2
+    add
+    pop pointer 1
+    push that 0
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    push local 1
+    push constant 1
+    add
+    pop local 1
+    goto Display_0
+label Display_1
+    push local 2
+    call Array.dispose 1
+    pop temp 0
+    push constant 0
+    return
+function Display.drawBoard 3
+    push argument 0
+    call Board.getBlackPieces 1
+    pop local 1
+    push argument 0
+    call Board.getWhitePieces 1
+    pop local 0
+    push constant 0
+    pop local 2
+label Display_2
+    push local 2
+    push constant 16
+    lt
+    not
+    if-goto Display_3
+    push local 2
+    push local 1
+    add
+    pop pointer 1
+    push that 0
+    call Display.drawPiece 1
+    pop temp 0
+    push local 2
+    push local 0
+    add
+    pop pointer 1
+    push that 0
+    call Display.drawPiece 1
+    pop temp 0
+    push local 2
+    push constant 1
+    add
+    pop local 2
+    goto Display_2
+label Display_3
+    push constant 0
+    return

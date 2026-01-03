@@ -1,0 +1,70 @@
+class Board {
+    field Array blackPieces, whitePieces, board;
+
+    constructor Board new() {
+        var int counter;
+        var Array tempArray;
+        let blackPieces = Array.new(16);
+        let whitePieces = Array.new(16);
+        let board = Array.new(8);
+        let counter = 0;
+        while(counter < 8) {
+            let blackPieces[counter] = Piece.new(0, counter + 97, 7);
+            let whitePieces[counter] = Piece.new(0, counter + 97, 2);
+            let board[counter] = Array.new(8);
+            
+            let counter = counter + 1;
+        }
+        let blackPieces[8] = Piece.new(3, 97, 1);
+        let blackPieces[9] = Piece.new(1, 98, 1);
+        let blackPieces[10] = Piece.new(2, 99, 1);
+        let blackPieces[11] = Piece.new(4, 100, 1);
+        let blackPieces[12] = Piece.new(5, 101, 1);
+        let blackPieces[13] = Piece.new(2, 102, 1);
+        let blackPieces[14] = Piece.new(1, 103, 1);
+        let blackPieces[15] = Piece.new(3, 104, 1);
+        
+        let whitePieces[8] = Piece.new(3, 97, 8);
+        let whitePieces[9] = Piece.new(1, 98, 8);
+        let whitePieces[10] = Piece.new(2, 99, 8);
+        let whitePieces[11] = Piece.new(4, 100, 8);
+        let whitePieces[12] = Piece.new(5, 101, 8);
+        let whitePieces[13] = Piece.new(2, 102, 8);
+        let whitePieces[14] = Piece.new(1, 103, 8);
+        let whitePieces[15] = Piece.new(3, 104, 8);
+
+        let counter = 0;
+        while(counter < 8) {
+            let tempArray = board[6];
+            let tempArray[counter] = blackPieces[counter];
+
+            let tempArray = board[1];
+            let tempArray[counter] = blackPieces[counter];
+
+            let tempArray = board[7];
+            let tempArray[counter] = blackPieces[counter + 8];
+
+            let tempArray = board[0];
+            let tempArray[counter] = whitePieces[counter + 8];
+
+            let counter = counter + 1;
+        }
+        
+
+        return this;
+    }
+
+    method Array getWhitePieces() {
+        return whitePieces;
+    }
+
+    method Array getBlackPieces() {
+        return blackPieces;
+    }
+
+    method Array getBoard() {
+        return board;
+    }
+
+
+}

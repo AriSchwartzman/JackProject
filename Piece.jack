@@ -1,0 +1,43 @@
+/**
+Piece class
+Will be 32 in total
+types:
+    0 = pawn
+    1 = knight
+    2 = bishop
+    3 = rook
+    4 = queen
+    5 = king
+
+ranks: 1 - 8
+files: a - h
+*/
+
+class Piece {
+    field int type, rank;
+    field char file;
+    field boolean color;
+
+    constructor Piece new(int atype, char afile, int arank) {
+        let type = atype;
+        let rank = arank;
+        let file = afile;
+        return this;
+    }
+
+    method int getType() {
+        return type;
+    }
+
+    method int getRank() {
+        return rank;
+    }
+
+    method char getFile() {
+        return file;
+    }
+
+    method int getFileInt() {
+        return file - 60;
+    }
+}

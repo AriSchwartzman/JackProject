@@ -1,0 +1,173 @@
+class Sprites {
+
+    function Array getPawn() {
+        var Array pawn;
+        let pawn = Array.new(14);
+        let pawn[0] = 0;
+        let pawn[1] = 0;
+        let pawn[2] = 0;
+        let pawn[3] = 192;
+        let pawn[4] = 1008;
+        let pawn[5] = 2040;
+        let pawn[6] = 2040;
+        let pawn[7] = 2040;
+        let pawn[8] = 1008;
+        let pawn[9] = 480;
+        let pawn[10] = 2040;
+        let pawn[11] = 4092;
+        let pawn[12] = 8190;
+        let pawn[13] = 8190;
+        return pawn;
+    }
+
+    function Array getKnight() {
+        var Array knight;
+        let knight = Array.new(14);
+        let knight[0] = 384;
+        let knight[1] = 1008;
+        let knight[2] = 2040;
+        let knight[3] = 4092;
+        let knight[4] = 8172;
+        let knight[5] = 16382;
+        let knight[6] = 16383;
+        let knight[7] = 16287;
+        let knight[8] = 8135;
+        let knight[9] = 4064;
+        let knight[10] = 2040;
+        let knight[11] = 2040;
+        let knight[12] = 8190;
+        let knight[13] = 16383;
+        return knight;
+    }
+
+    function Array getBishop() {
+        var Array bishop;
+        let bishop = Array.new(14);
+        let bishop[0] = 480;
+        let bishop[1] = 1008;
+        let bishop[2] = 816;
+        let bishop[3] = 1848;
+        let bishop[4] = 1032;
+        let bishop[5] = 1848;
+        let bishop[6] = 816;
+        let bishop[7] = 288;
+        let bishop[8] = 3900;
+        let bishop[9] = 4092;
+        let bishop[10] = 2040;
+        let bishop[11] = 8190;
+        let bishop[12] = 8190;
+        let bishop[13] = 16383;
+        return bishop;
+    }
+
+    function Array getRook() {
+        var Array rook;
+        let rook = Array.new(14);
+        let rook[0] = 6966;
+        let rook[1] = 6966;
+        let rook[2] = 6966;
+        let rook[3] = 8190;
+        let rook[4] = 8190;
+        let rook[5] = 8190;
+        let rook[6] = 8190;
+        let rook[7] = 2040;
+        let rook[8] = 2040;
+        let rook[9] = 2040;
+        let rook[10] = 4092;
+        let rook[11] = 8190;
+        let rook[12] = 16383;
+        let rook[13] = 16383;
+        return rook;
+    }
+
+    function Array getQueen() {
+        var Array queen;
+        let queen = Array.new(14);
+        let queen[0] = 1848;
+        let queen[1] = 14139;
+        let queen[2] = 13107;
+        let queen[3] = 6966;
+        let queen[4] = 6966;
+        let queen[5] = 4092;
+        let queen[6] = 4092;
+        let queen[7] = 2040;
+        let queen[8] = 2040;
+        let queen[9] = 2040;
+        let queen[10] = 4092;
+        let queen[11] = 8190;
+        let queen[12] = 16383;
+        let queen[13] = 16383;
+        return queen;
+    }
+
+    function Array getKing() {
+        var Array king;
+        let king = Array.new(14);
+        let king[0] = 192;
+        let king[1] = 192;
+        let king[2] = 1008;
+        let king[3] = 192;
+        let king[4] = 192;
+        let king[5] = 2040;
+        let king[6] = 1008;
+        let king[7] = 1008;
+        let king[8] = 4092;
+        let king[9] = 2040;
+        let king[10] = 2040;
+        let king[11] = 2040;
+        let king[12] = 8190;
+        let king[13] = 16383;
+        return king;
+    }
+
+    function Array getSprite(int identifier, int offset) {
+        var int counter0;
+        var int counter1;
+        var int counter1Plus14;
+        var Array sprite;
+        var Array template;
+
+        let sprite = Array.new(28);
+        if(identifier = 0) {let template = Sprites.getPawn();}
+        if(identifier = 1) {let template = Sprites.getKnight();}
+        if(identifier = 2) {let template = Sprites.getBishop();}
+        if(identifier = 3) {let template = Sprites.getRook();}
+        if(identifier = 4) {let template = Sprites.getQueen();}
+        if(identifier = 5) {let template = Sprites.getKing();}
+
+        let counter0 = 0;
+        while(counter0 < 14) {
+            let sprite[counter0] = template[counter0];
+            let counter0 = counter0 + 1;
+        }
+        /* Modifies the sprite's array to offset 0-15 pixels */
+        let counter0 = 0;
+        // Repeats each offset
+        while(counter0 < offset) {
+            let counter1 = 0;
+            let counter1Plus14 = 14;
+            // Repeats for each row of the sprite
+            while(counter1 < 14) {
+                // Fills second array to handle overflow between words
+                if(sprite[counter1] < 0) {
+                    if(sprite[counter1] = 0) {
+                        let sprite[counter1Plus14] = 1;
+                    }
+                    else {
+                        let sprite[counter1Plus14] = sprite[counter1Plus14] * 2 + 1;
+                    }
+                    let sprite[counter1] = sprite[counter1] & 32767 * 2;
+                }
+                // Left shifts binary digits to right shift sprite
+                else {
+                    let sprite[counter1] = sprite[counter1] * 2;
+                    let sprite[counter1Plus14] = sprite[counter1Plus14] * 2;
+                }
+                let counter1Plus14 = counter1Plus14 + 1;
+                let counter1 = counter1 + 1;
+            }
+            let counter0 = counter0 + 1;
+        }
+        return sprite;
+    }
+}
