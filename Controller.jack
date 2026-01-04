@@ -1,0 +1,39 @@
+class Controller {
+
+    field int rankInput;
+
+    field char fileInput;
+
+    constructor Controller new() {
+        let rankInput = 0;
+        let fileInput = 0;
+        return this;
+    }
+
+    method boolean getInput() {
+        var int input;
+
+        let input = Keyboard.keyPressed();
+
+        if(input > 48 & (input < 58)) {
+            let rankInput = input;
+        }
+        if(input > 96 & (input < 105)) {
+            let fileInput = input;
+        }
+
+        if(input = 128) {
+            return true;
+        }
+
+        return false;
+    }
+
+    method int getRankInput() {
+        return rankInput - 48;
+    }
+
+    method char getFileInput() {
+        return fileInput;
+    }
+}

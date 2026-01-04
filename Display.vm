@@ -1,12 +1,16 @@
 function Display.erase 2
     push argument 0
     call Piece.getFileInt 1
-    push constant 16
+    push constant 1
+    sub
+    push constant 32
     call Math.multiply 2
     pop local 0
     push argument 0
     call Piece.getRank 1
-    push constant 16
+    push constant 1
+    sub
+    push constant 31
     call Math.multiply 2
     pop local 1
     push constant 0
@@ -15,70 +19,74 @@ function Display.erase 2
     push local 0
     push local 1
     push local 0
-    push constant 13
+    push constant 27
     add
     push local 1
-    push constant 13
+    push constant 27
     add
     call Screen.drawRectangle 4
     pop temp 0
     push constant 0
     return
-function Display.drawPiece 7
+function Display.drawPiece 8
     push argument 0
     call Piece.getFileInt 1
     push constant 1
     sub
-    push constant 16
+    push constant 32
     call Math.multiply 2
-    pop local 3
+    pop local 4
     push argument 0
     call Piece.getRank 1
     push constant 1
     sub
-    push constant 16
+    push constant 31
     call Math.multiply 2
-    pop local 4
+    pop local 5
     push constant 16384
     push constant 32
-    push local 4
+    push local 5
     call Math.multiply 2
     add
-    push local 3
+    push local 4
     push constant 16
     call Math.divide 2
     add
-    pop local 6
-    push local 3
+    pop local 7
+    push local 4
     push constant 16
-    push local 3
+    push local 4
     push constant 16
     call Math.divide 2
     call Math.multiply 2
     sub
-    pop local 5
+    pop local 6
     push argument 0
     call Piece.getType 1
-    push local 5
-    call Sprites.getSprite 2
-    pop local 2
+    push local 6
+    push argument 0
+    call Piece.getColor 1
+    call Sprites.getSprite 3
+    pop local 3
     push constant 0
     pop local 0
-    push constant 14
+    push constant 28
     pop local 1
+    push constant 56
+    pop local 2
 label Display_0
     push local 0
-    push constant 14
+    push constant 28
     lt
     not
     if-goto Display_1
     push constant 32
     push local 0
     call Math.multiply 2
-    push local 6
+    push local 7
     add
     push local 0
-    push local 2
+    push local 3
     add
     pop pointer 1
     push that 0
@@ -87,12 +95,26 @@ label Display_0
     push constant 32
     push local 0
     call Math.multiply 2
-    push local 6
+    push local 7
     add
     push constant 1
     add
     push local 1
+    push local 3
+    add
+    pop pointer 1
+    push that 0
+    call Memory.poke 2
+    pop temp 0
+    push constant 32
+    push local 0
+    call Math.multiply 2
+    push local 7
+    add
+    push constant 2
+    add
     push local 2
+    push local 3
     add
     pop pointer 1
     push that 0
@@ -106,14 +128,20 @@ label Display_0
     push constant 1
     add
     pop local 1
+    push local 2
+    push constant 1
+    add
+    pop local 2
     goto Display_0
 label Display_1
-    push local 2
+    push local 3
     call Array.dispose 1
     pop temp 0
     push constant 0
     return
 function Display.drawBoard 3
+    call Screen.clearScreen 0
+    pop temp 0
     push argument 0
     call Board.getBlackPieces 1
     pop local 1
@@ -148,5 +176,898 @@ label Display_2
     pop local 2
     goto Display_2
 label Display_3
+    call Display.drawRanks 0
+    pop temp 0
+    call Display.drawFiles 0
+    pop temp 0
+    push constant 126
+    pop local 2
+label Display_4
+    push local 2
+    push constant 414
+    lt
+    not
+    if-goto Display_5
+    push local 2
+    push constant 0
+    push local 2
+    push constant 248
+    call Screen.drawLine 4
+    pop temp 0
+    push local 2
+    push constant 32
+    add
+    pop local 2
+    goto Display_4
+label Display_5
+    push constant 0
+    pop local 2
+label Display_6
+    push local 2
+    push constant 279
+    lt
+    not
+    if-goto Display_7
+    push constant 126
+    push local 2
+    push constant 382
+    push local 2
+    call Screen.drawLine 4
+    pop temp 0
+    push local 2
+    push constant 31
+    add
+    pop local 2
+    goto Display_6
+label Display_7
+    push constant 0
+    return
+function Display.drawRanks 1
+    push constant 16384
+    push constant 13
+    push constant 32
+    call Math.multiply 2
+    add
+    push constant 112
+    push constant 16
+    call Math.divide 2
+    add
+    pop local 0
+    push local 0
+    push constant 16
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 32
+    add
+    push constant 24
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 64
+    add
+    push constant 16
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 96
+    add
+    push constant 16
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 128
+    add
+    push constant 16
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 160
+    add
+    push constant 16
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 192
+    add
+    push constant 56
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 992
+    add
+    push constant 24
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 1024
+    add
+    push constant 36
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 1056
+    add
+    push constant 32
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 1088
+    add
+    push constant 16
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 1120
+    add
+    push constant 8
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 1152
+    add
+    push constant 4
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 1184
+    add
+    push constant 60
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 1984
+    add
+    push constant 28
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 2016
+    add
+    push constant 32
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 2048
+    add
+    push constant 32
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 2080
+    add
+    push constant 28
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 2112
+    add
+    push constant 32
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 2144
+    add
+    push constant 32
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 2176
+    add
+    push constant 28
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 2976
+    add
+    push constant 36
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 3008
+    add
+    push constant 36
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 3040
+    add
+    push constant 36
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 3072
+    add
+    push constant 60
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 3104
+    add
+    push constant 32
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 3136
+    add
+    push constant 32
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 3168
+    add
+    push constant 32
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 3968
+    add
+    push constant 60
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 4000
+    add
+    push constant 4
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 4032
+    add
+    push constant 4
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 4064
+    add
+    push constant 60
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 4096
+    add
+    push constant 32
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 4128
+    add
+    push constant 32
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 4160
+    add
+    push constant 60
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 4960
+    add
+    push constant 60
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 4992
+    add
+    push constant 4
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 5024
+    add
+    push constant 4
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 5056
+    add
+    push constant 60
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 5088
+    add
+    push constant 36
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 5120
+    add
+    push constant 36
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 5152
+    add
+    push constant 60
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 5952
+    add
+    push constant 124
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 5984
+    add
+    push constant 64
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 6016
+    add
+    push constant 32
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 6048
+    add
+    push constant 16
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 6080
+    add
+    push constant 16
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 6112
+    add
+    push constant 8
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 6144
+    add
+    push constant 8
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 6944
+    add
+    push constant 24
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 6976
+    add
+    push constant 36
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 7008
+    add
+    push constant 24
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 7040
+    add
+    push constant 36
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 7072
+    add
+    push constant 36
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 7104
+    add
+    push constant 24
+    call Memory.poke 2
+    pop temp 0
+    push constant 0
+    return
+function Display.drawFiles 1
+    push constant 16384
+    push constant 32
+    push constant 249
+    call Math.multiply 2
+    add
+    push constant 112
+    push constant 16
+    call Math.divide 2
+    add
+    pop local 0
+    push local 0
+    push constant 33
+    add
+    push constant 24576
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 65
+    add
+    push constant 28672
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 97
+    add
+    push constant 4096
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 129
+    add
+    push constant 28672
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 161
+    add
+    push constant 28672
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 35
+    add
+    push constant 28672
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 67
+    add
+    push constant 28672
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 99
+    add
+    push constant 28672
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 131
+    add
+    push constant 28672
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 163
+    add
+    push constant 28672
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 37
+    add
+    push constant 8192
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 69
+    add
+    push constant 4096
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 101
+    add
+    push constant 4096
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 133
+    add
+    push constant 4096
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 165
+    add
+    push constant 8192
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 39
+    add
+    push constant 28672
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 71
+    add
+    push constant 28672
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 103
+    add
+    push constant 28672
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 135
+    add
+    push constant 28672
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 167
+    add
+    push constant 28672
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 41
+    add
+    push constant 4096
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 73
+    add
+    push constant 4096
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 105
+    add
+    push constant 4096
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 137
+    add
+    push constant 4096
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 169
+    add
+    push constant 4096
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 43
+    add
+    push constant 4096
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 75
+    add
+    push constant 4096
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 107
+    add
+    push constant 4096
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 139
+    add
+    push constant 4096
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 171
+    add
+    push constant 4096
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 45
+    add
+    push constant 24576
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 77
+    add
+    push constant 4096
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 109
+    add
+    push constant 12288
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 141
+    add
+    push constant 28672
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 173
+    add
+    push constant 24576
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 47
+    add
+    push constant 28672
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 79
+    add
+    push constant 28672
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 111
+    add
+    push constant 4096
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 143
+    add
+    push constant 28672
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push local 0
+    push constant 175
+    add
+    push constant 28672
+    neg
+    call Memory.poke 2
+    pop temp 0
+    push constant 0
+    return
+function Display.shadeSquare 2
+    push argument 1
+    push constant 93
+    sub
+    push constant 32
+    call Math.multiply 2
+    push constant 1
+    sub
+    pop local 0
+    push argument 0
+    push constant 1
+    sub
+    push constant 31
+    call Math.multiply 2
+    pop local 1
+    push argument 2
+    not
+    if-goto Display_9
+    push local 0
+    push local 1
+    push constant 31
+    add
+    push local 0
+    push constant 31
+    add
+    push local 1
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push local 1
+    push constant 24
+    add
+    push local 0
+    push constant 24
+    add
+    push local 1
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push constant 8
+    add
+    push local 1
+    push constant 31
+    add
+    push local 0
+    push constant 31
+    add
+    push local 1
+    push constant 8
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push local 1
+    push constant 16
+    add
+    push local 0
+    push constant 16
+    add
+    push local 1
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push constant 16
+    add
+    push local 1
+    push constant 31
+    add
+    push local 0
+    push constant 31
+    add
+    push local 1
+    push constant 16
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push local 1
+    push constant 8
+    add
+    push local 0
+    push constant 8
+    add
+    push local 1
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push constant 24
+    add
+    push local 1
+    push constant 31
+    add
+    push local 0
+    push constant 31
+    add
+    push local 1
+    push constant 24
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    goto Display_8
+label Display_9
+    push local 0
+    push local 1
+    push local 0
+    push constant 31
+    add
+    push local 1
+    push constant 31
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push local 1
+    push constant 24
+    add
+    push local 0
+    push constant 8
+    add
+    push local 1
+    push constant 31
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push constant 24
+    add
+    push local 1
+    push local 0
+    push constant 31
+    add
+    push local 1
+    push constant 8
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push local 1
+    push constant 16
+    add
+    push local 0
+    push constant 16
+    add
+    push local 1
+    push constant 31
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push constant 16
+    add
+    push local 1
+    push local 0
+    push constant 31
+    add
+    push local 1
+    push constant 16
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push local 1
+    push constant 8
+    add
+    push local 0
+    push constant 24
+    add
+    push local 1
+    push constant 31
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push constant 8
+    add
+    push local 1
+    push local 0
+    push constant 31
+    add
+    push local 1
+    push constant 24
+    add
+    call Screen.drawLine 4
+    pop temp 0
+label Display_8
+    push constant 0
+    return
+function Display.shadeRank 1
+    push constant 97
+    pop local 0
+label Display_10
+    push local 0
+    push constant 105
+    lt
+    not
+    if-goto Display_11
+    push argument 0
+    push local 0
+    push constant 1
+    neg
+    call Display.shadeSquare 3
+    pop temp 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Display_10
+label Display_11
+    push constant 0
+    return
+function Display.shadeFile 1
+    push constant 1
+    pop local 0
+label Display_12
+    push local 0
+    push constant 9
+    lt
+    not
+    if-goto Display_13
+    push local 0
+    push argument 0
+    push constant 0
+    call Display.shadeSquare 3
+    pop temp 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Display_12
+label Display_13
     push constant 0
     return

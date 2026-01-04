@@ -1,9 +1,22 @@
 class Main {
     function void main() {
         var Board board;
+        var Controller controller;
 
         let board = Board.new();
+        let controller = Controller.new();
         do Display.drawBoard(board);
+
+        do Display.shadeRank(4);
+        do Display.shadeFile(101);
+
+        while(~controller.getInput()) {
+            do Sys.wait(10);
+        }
+
+        do Output.printInt(controller.getRankInput());
+        do Output.println();
+        do Output.printChar(controller.getFileInput());
 
         return;
     }

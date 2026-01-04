@@ -1,7 +1,10 @@
 function Sprites.getPawn 1
-    push constant 14
+    push constant 56
     call Array.new 1
     pop local 0
+    push argument 0
+    not
+    if-goto Sprites_1
     push constant 0
     push local 0
     add
@@ -27,6 +30,536 @@ function Sprites.getPawn 1
     push temp 0
     pop that 0
     push constant 3
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 4
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 5
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 6
+    push local 0
+    add
+    push constant 4096
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 7
+    push local 0
+    add
+    push constant 4096
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 8
+    push local 0
+    add
+    push constant 256
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 9
+    push local 0
+    add
+    push constant 256
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 10
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 11
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 12
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 13
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 14
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 15
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 16
+    push local 0
+    add
+    push constant 256
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 17
+    push local 0
+    add
+    push constant 256
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 18
+    push local 0
+    add
+    push constant 1024
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 19
+    push local 0
+    add
+    push constant 1024
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 20
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 21
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 22
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 23
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 24
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 25
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 26
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 27
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 28
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 29
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 30
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 31
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 32
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 33
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 34
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 35
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 36
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 37
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 38
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 39
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 40
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 41
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 42
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 43
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 44
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 45
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 46
+    push local 0
+    add
+    push constant 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 47
+    push local 0
+    add
+    push constant 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 48
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 49
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 50
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 51
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 52
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 53
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 54
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 55
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    goto Sprites_0
+label Sprites_1
+    push constant 0
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 1
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 2
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 3
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 4
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 5
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 6
+    push local 0
+    add
+    push constant 4096
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 7
+    push local 0
+    add
+    push constant 28672
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 8
+    push local 0
+    add
+    push constant 3840
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 9
+    push local 0
+    add
+    push constant 256
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 10
     push local 0
     add
     push constant 192
@@ -34,66 +567,10 @@ function Sprites.getPawn 1
     pop pointer 1
     push temp 0
     pop that 0
-    push constant 4
-    push local 0
-    add
-    push constant 1008
-    pop temp 0
-    pop pointer 1
-    push temp 0
-    pop that 0
-    push constant 5
-    push local 0
-    add
-    push constant 2040
-    pop temp 0
-    pop pointer 1
-    push temp 0
-    pop that 0
-    push constant 6
-    push local 0
-    add
-    push constant 2040
-    pop temp 0
-    pop pointer 1
-    push temp 0
-    pop that 0
-    push constant 7
-    push local 0
-    add
-    push constant 2040
-    pop temp 0
-    pop pointer 1
-    push temp 0
-    pop that 0
-    push constant 8
-    push local 0
-    add
-    push constant 1008
-    pop temp 0
-    pop pointer 1
-    push temp 0
-    pop that 0
-    push constant 9
-    push local 0
-    add
-    push constant 480
-    pop temp 0
-    pop pointer 1
-    push temp 0
-    pop that 0
-    push constant 10
-    push local 0
-    add
-    push constant 2040
-    pop temp 0
-    pop pointer 1
-    push temp 0
-    pop that 0
     push constant 11
     push local 0
     add
-    push constant 4092
+    push constant 64
     pop temp 0
     pop pointer 1
     push temp 0
@@ -101,7 +578,7 @@ function Sprites.getPawn 1
     push constant 12
     push local 0
     add
-    push constant 8190
+    push constant 64
     pop temp 0
     pop pointer 1
     push temp 0
@@ -109,18 +586,872 @@ function Sprites.getPawn 1
     push constant 13
     push local 0
     add
-    push constant 8190
+    push constant 64
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
+    push constant 14
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 15
+    push local 0
+    add
+    push constant 192
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 16
+    push local 0
+    add
+    push constant 256
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 17
+    push local 0
+    add
+    push constant 768
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 18
+    push local 0
+    add
+    push constant 1024
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 19
+    push local 0
+    add
+    push constant 1024
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 20
+    push local 0
+    add
+    push constant 896
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 21
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 22
+    push local 0
+    add
+    push constant 32
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 23
+    push local 0
+    add
+    push constant 16
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 24
+    push local 0
+    add
+    push constant 8
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 25
+    push local 0
+    add
+    push constant 4
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 26
+    push local 0
+    add
+    push constant 4
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 27
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 28
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 29
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 30
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 31
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 32
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 33
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 34
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 35
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 36
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 37
+    push local 0
+    add
+    push constant 8
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 38
+    push local 0
+    add
+    push constant 48
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 39
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 40
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 41
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 42
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 43
+    push local 0
+    add
+    push constant 48
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 44
+    push local 0
+    add
+    push constant 8
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 45
+    push local 0
+    add
+    push constant 12
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 46
+    push local 0
+    add
+    push constant 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 47
+    push local 0
+    add
+    push constant 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 48
+    push local 0
+    add
+    push constant 28
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 49
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 50
+    push local 0
+    add
+    push constant 127
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 51
+    push local 0
+    add
+    push constant 128
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 52
+    push local 0
+    add
+    push constant 511
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 53
+    push local 0
+    add
+    push constant 512
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 54
+    push local 0
+    add
+    push constant 512
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 55
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+label Sprites_0
     push local 0
     return
 function Sprites.getKnight 1
-    push constant 14
+    push constant 56
     call Array.new 1
     pop local 0
+    push argument 0
+    not
+    if-goto Sprites_3
     push constant 0
+    push local 0
+    add
+    push constant 16384
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 1
+    push local 0
+    add
+    push constant 16384
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 2
+    push local 0
+    add
+    push constant 256
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 3
+    push local 0
+    add
+    push constant 256
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 4
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 5
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 6
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 7
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 8
+    push local 0
+    add
+    push constant 784
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 9
+    push local 0
+    add
+    push constant 784
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 10
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 11
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 12
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 13
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 14
+    push local 0
+    add
+    push constant 15361
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 15
+    push local 0
+    add
+    push constant 15361
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 16
+    push local 0
+    add
+    push constant 4033
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 17
+    push local 0
+    add
+    push constant 4033
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 18
+    push local 0
+    add
+    push constant 1024
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 19
+    push local 0
+    add
+    push constant 1024
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 20
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 21
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 22
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 23
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 24
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 25
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 26
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 27
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 28
+    push local 0
+    add
+    push constant 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 29
+    push local 0
+    add
+    push constant 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 30
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 31
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 32
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 33
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 34
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 35
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 36
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 37
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 38
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 39
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 40
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 41
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 42
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 43
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 44
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 45
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 46
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 47
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 48
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 49
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 50
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 51
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 52
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 53
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 54
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 55
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    goto Sprites_2
+label Sprites_3
+    push constant 0
+    push local 0
+    add
+    push constant 16384
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 1
+    push local 0
+    add
+    push constant 16384
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 2
+    push local 0
+    add
+    push constant 15872
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 3
+    push local 0
+    add
+    push constant 256
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 4
     push local 0
     add
     push constant 384
@@ -128,42 +1459,10 @@ function Sprites.getKnight 1
     pop pointer 1
     push temp 0
     pop that 0
-    push constant 1
-    push local 0
-    add
-    push constant 1008
-    pop temp 0
-    pop pointer 1
-    push temp 0
-    pop that 0
-    push constant 2
-    push local 0
-    add
-    push constant 2040
-    pop temp 0
-    pop pointer 1
-    push temp 0
-    pop that 0
-    push constant 3
-    push local 0
-    add
-    push constant 4092
-    pop temp 0
-    pop pointer 1
-    push temp 0
-    pop that 0
-    push constant 4
-    push local 0
-    add
-    push constant 8172
-    pop temp 0
-    pop pointer 1
-    push temp 0
-    pop that 0
     push constant 5
     push local 0
     add
-    push constant 16382
+    push constant 64
     pop temp 0
     pop pointer 1
     push temp 0
@@ -171,7 +1470,7 @@ function Sprites.getKnight 1
     push constant 6
     push local 0
     add
-    push constant 16383
+    push constant 96
     pop temp 0
     pop pointer 1
     push temp 0
@@ -179,7 +1478,7 @@ function Sprites.getKnight 1
     push constant 7
     push local 0
     add
-    push constant 16287
+    push constant 16
     pop temp 0
     pop pointer 1
     push temp 0
@@ -187,7 +1486,7 @@ function Sprites.getKnight 1
     push constant 8
     push local 0
     add
-    push constant 8135
+    push constant 784
     pop temp 0
     pop pointer 1
     push temp 0
@@ -195,7 +1494,7 @@ function Sprites.getKnight 1
     push constant 9
     push local 0
     add
-    push constant 4064
+    push constant 784
     pop temp 0
     pop pointer 1
     push temp 0
@@ -203,7 +1502,7 @@ function Sprites.getKnight 1
     push constant 10
     push local 0
     add
-    push constant 2040
+    push constant 24
     pop temp 0
     pop pointer 1
     push temp 0
@@ -211,7 +1510,7 @@ function Sprites.getKnight 1
     push constant 11
     push local 0
     add
-    push constant 2040
+    push constant 4
     pop temp 0
     pop pointer 1
     push temp 0
@@ -219,7 +1518,7 @@ function Sprites.getKnight 1
     push constant 12
     push local 0
     add
-    push constant 8190
+    push constant 2
     pop temp 0
     pop pointer 1
     push temp 0
@@ -227,21 +1526,365 @@ function Sprites.getKnight 1
     push constant 13
     push local 0
     add
-    push constant 16383
+    push constant 32257
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
+    push constant 14
+    push local 0
+    add
+    push constant 16897
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 15
+    push local 0
+    add
+    push constant 17345
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 16
+    push local 0
+    add
+    push constant 8225
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 17
+    push local 0
+    add
+    push constant 4158
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 18
+    push local 0
+    add
+    push constant 2048
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 19
+    push local 0
+    add
+    push constant 1024
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 20
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 21
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 22
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 23
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 24
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 25
+    push local 0
+    add
+    push constant 7
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 26
+    push local 0
+    add
+    push constant 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 27
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 28
+    push local 0
+    add
+    push constant 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 29
+    push local 0
+    add
+    push constant 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 30
+    push local 0
+    add
+    push constant 12
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 31
+    push local 0
+    add
+    push constant 8
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 32
+    push local 0
+    add
+    push constant 48
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 33
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 34
+    push local 0
+    add
+    push constant 192
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 35
+    push local 0
+    add
+    push constant 128
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 36
+    push local 0
+    add
+    push constant 768
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 37
+    push local 0
+    add
+    push constant 512
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 38
+    push local 0
+    add
+    push constant 3072
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 39
+    push local 0
+    add
+    push constant 2048
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 40
+    push local 0
+    add
+    push constant 2048
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 41
+    push local 0
+    add
+    push constant 2048
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 42
+    push local 0
+    add
+    push constant 2048
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 43
+    push local 0
+    add
+    push constant 3584
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 44
+    push local 0
+    add
+    push constant 512
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 45
+    push local 0
+    add
+    push constant 768
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 46
+    push local 0
+    add
+    push constant 128
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 47
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 48
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 49
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 50
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 51
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 52
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 53
+    push local 0
+    add
+    push constant 3584
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 54
+    push local 0
+    add
+    push constant 2048
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 55
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+label Sprites_2
     push local 0
     return
 function Sprites.getBishop 1
-    push constant 14
+    push constant 56
     call Array.new 1
     pop local 0
+    push argument 0
+    not
+    if-goto Sprites_5
     push constant 0
     push local 0
     add
-    push constant 480
+    push constant 1024
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -249,7 +1892,8 @@ function Sprites.getBishop 1
     push constant 1
     push local 0
     add
-    push constant 1008
+    push constant 1024
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -257,7 +1901,8 @@ function Sprites.getBishop 1
     push constant 2
     push local 0
     add
-    push constant 816
+    push constant 256
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -265,7 +1910,8 @@ function Sprites.getBishop 1
     push constant 3
     push local 0
     add
-    push constant 1848
+    push constant 256
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -273,7 +1919,7 @@ function Sprites.getBishop 1
     push constant 4
     push local 0
     add
-    push constant 1032
+    push constant 3840
     pop temp 0
     pop pointer 1
     push temp 0
@@ -281,7 +1927,7 @@ function Sprites.getBishop 1
     push constant 5
     push local 0
     add
-    push constant 1848
+    push constant 3840
     pop temp 0
     pop pointer 1
     push temp 0
@@ -289,7 +1935,7 @@ function Sprites.getBishop 1
     push constant 6
     push local 0
     add
-    push constant 816
+    push constant 4032
     pop temp 0
     pop pointer 1
     push temp 0
@@ -297,7 +1943,1885 @@ function Sprites.getBishop 1
     push constant 7
     push local 0
     add
-    push constant 288
+    push constant 4032
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 8
+    push local 0
+    add
+    push constant 192
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 9
+    push local 0
+    add
+    push constant 192
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 10
+    push local 0
+    add
+    push constant 4032
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 11
+    push local 0
+    add
+    push constant 4032
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 12
+    push local 0
+    add
+    push constant 3840
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 13
+    push local 0
+    add
+    push constant 3840
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 14
+    push local 0
+    add
+    push constant 3072
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 15
+    push local 0
+    add
+    push constant 3072
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 16
+    push local 0
+    add
+    push constant 4080
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 17
+    push local 0
+    add
+    push constant 4080
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 18
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 19
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 20
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 21
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 22
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 23
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 24
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 25
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 26
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 27
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 28
+    push local 0
+    add
+    push constant 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 29
+    push local 0
+    add
+    push constant 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 30
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 31
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 32
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 33
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 34
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 35
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 36
+    push local 0
+    add
+    push constant 48
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 37
+    push local 0
+    add
+    push constant 48
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 38
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 39
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 40
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 41
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 42
+    push local 0
+    add
+    push constant 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 43
+    push local 0
+    add
+    push constant 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 44
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 45
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 46
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 47
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 48
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 49
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 50
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 51
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 52
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 53
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 54
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 55
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    goto Sprites_4
+label Sprites_5
+    push constant 0
+    push local 0
+    add
+    push constant 1024
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 1
+    push local 0
+    add
+    push constant 1536
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 2
+    push local 0
+    add
+    push constant 768
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 3
+    push local 0
+    add
+    push constant 3840
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 4
+    push local 0
+    add
+    push constant 28416
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 5
+    push local 0
+    add
+    push constant 28288
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 6
+    push local 0
+    add
+    push constant 28480
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 7
+    push local 0
+    add
+    push constant 24768
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 8
+    push local 0
+    add
+    push constant 320
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 9
+    push local 0
+    add
+    push constant 24768
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 10
+    push local 0
+    add
+    push constant 28608
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 11
+    push local 0
+    add
+    push constant 28480
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 12
+    push local 0
+    add
+    push constant 28288
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 13
+    push local 0
+    add
+    push constant 26880
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 14
+    push local 0
+    add
+    push constant 27648
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 15
+    push local 0
+    add
+    push constant 27648
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 16
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 17
+    push local 0
+    add
+    push constant 16
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 18
+    push local 0
+    add
+    push constant 16
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 19
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 20
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 21
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 22
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 23
+    push local 0
+    add
+    push constant 4
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 24
+    push local 0
+    add
+    push constant 4
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 25
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 26
+    push local 0
+    add
+    push constant 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 27
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 28
+    push local 0
+    add
+    push constant 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 29
+    push local 0
+    add
+    push constant 6
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 30
+    push local 0
+    add
+    push constant 12
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 31
+    push local 0
+    add
+    push constant 8
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 32
+    push local 0
+    add
+    push constant 8
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 33
+    push local 0
+    add
+    push constant 24
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 34
+    push local 0
+    add
+    push constant 48
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 35
+    push local 0
+    add
+    push constant 47
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 36
+    push local 0
+    add
+    push constant 40
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 37
+    push local 0
+    add
+    push constant 47
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 38
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 39
+    push local 0
+    add
+    push constant 48
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 40
+    push local 0
+    add
+    push constant 24
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 41
+    push local 0
+    add
+    push constant 12
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 42
+    push local 0
+    add
+    push constant 6
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 43
+    push local 0
+    add
+    push constant 6
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 44
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 45
+    push local 0
+    add
+    push constant 128
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 46
+    push local 0
+    add
+    push constant 128
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 47
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 48
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 49
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 50
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 51
+    push local 0
+    add
+    push constant 512
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 52
+    push local 0
+    add
+    push constant 512
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 53
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 54
+    push local 0
+    add
+    push constant 2048
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 55
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+label Sprites_4
+    push local 0
+    return
+function Sprites.getRook 1
+    push constant 56
+    call Array.new 1
+    pop local 0
+    push argument 0
+    not
+    if-goto Sprites_7
+    push constant 0
+    push local 0
+    add
+    push constant 3900
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 1
+    push local 0
+    add
+    push constant 3900
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 2
+    push local 0
+    add
+    push constant 3900
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 3
+    push local 0
+    add
+    push constant 3900
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 4
+    push local 0
+    add
+    push constant 3900
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 5
+    push local 0
+    add
+    push constant 3900
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 6
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 7
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 8
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 9
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 10
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 11
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 12
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 13
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 14
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 15
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 16
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 17
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 18
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 19
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 20
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 21
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 22
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 23
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 24
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 25
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 26
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 27
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 28
+    push local 0
+    add
+    push constant 975
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 29
+    push local 0
+    add
+    push constant 975
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 30
+    push local 0
+    add
+    push constant 975
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 31
+    push local 0
+    add
+    push constant 975
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 32
+    push local 0
+    add
+    push constant 975
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 33
+    push local 0
+    add
+    push constant 975
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 34
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 35
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 36
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 37
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 38
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 39
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 40
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 41
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 42
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 43
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 44
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 45
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 46
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 47
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 48
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 49
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 50
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 51
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 52
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 53
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 54
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 55
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    goto Sprites_6
+label Sprites_7
+    push constant 0
+    push local 0
+    add
+    push constant 24964
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 1
+    push local 0
+    add
+    push constant 28092
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 2
+    push local 0
+    add
+    push constant 28092
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 3
+    push local 0
+    add
+    push constant 28092
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 4
+    push local 0
+    add
+    push constant 28092
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 5
+    push local 0
+    add
+    push constant 28092
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 6
+    push local 0
+    add
+    push constant 28092
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 7
+    push local 0
+    add
+    push constant 3132
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 8
+    push local 0
+    add
+    push constant 4
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 9
+    push local 0
+    add
+    push constant 4
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 10
+    push local 0
+    add
+    push constant 4
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 11
+    push local 0
+    add
+    push constant 4
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 12
+    push local 0
+    add
+    push constant 4
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 13
+    push local 0
+    add
+    push constant 4
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 14
+    push local 0
+    add
+    push constant 4
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 15
+    push local 0
+    add
+    push constant 124
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 16
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 17
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 18
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 19
+    push local 0
+    add
+    push constant 32
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 20
+    push local 0
+    add
+    push constant 16
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 21
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 22
+    push local 0
+    add
+    push constant 4
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 23
+    push local 0
+    add
+    push constant 2
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 24
+    push local 0
+    add
+    push constant 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 25
+    push local 0
+    add
+    push constant 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 26
+    push local 0
+    add
+    push constant 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 27
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 28
+    push local 0
+    add
+    push constant 999
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 29
+    push local 0
+    add
+    push constant 548
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 30
+    push local 0
+    add
+    push constant 548
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 31
+    push local 0
+    add
+    push constant 548
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 32
+    push local 0
+    add
+    push constant 548
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 33
+    push local 0
+    add
+    push constant 548
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 34
+    push local 0
+    add
+    push constant 548
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 35
+    push local 0
+    add
+    push constant 572
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 36
+    push local 0
+    add
+    push constant 512
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 37
+    push local 0
+    add
+    push constant 512
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 38
+    push local 0
+    add
+    push constant 512
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 39
+    push local 0
+    add
+    push constant 512
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 40
+    push local 0
+    add
+    push constant 512
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 41
+    push local 0
+    add
+    push constant 512
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 42
+    push local 0
+    add
+    push constant 512
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 43
+    push local 0
+    add
+    push constant 992
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 44
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 45
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 46
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 47
+    push local 0
+    add
+    push constant 127
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 48
+    push local 0
+    add
+    push constant 128
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 49
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 50
+    push local 0
+    add
+    push constant 512
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 51
+    push local 0
+    add
+    push constant 2047
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 52
+    push local 0
+    add
+    push constant 2048
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 53
+    push local 0
+    add
+    push constant 2048
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 54
+    push local 0
+    add
+    push constant 2048
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 55
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+label Sprites_6
+    push local 0
+    return
+function Sprites.getQueen 1
+    push constant 56
+    call Array.new 1
+    pop local 0
+    push argument 0
+    not
+    if-goto Sprites_9
+    push constant 0
+    push local 0
+    add
+    push constant 4032
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 1
+    push local 0
+    add
+    push constant 4032
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 2
+    push local 0
+    add
+    push constant 4047
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 3
+    push local 0
+    add
+    push constant 4047
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 4
+    push local 0
+    add
+    push constant 3855
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 5
+    push local 0
+    add
+    push constant 3855
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 6
+    push local 0
+    add
+    push constant 3900
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 7
+    push local 0
+    add
+    push constant 3900
     pop temp 0
     pop pointer 1
     push temp 0
@@ -313,7 +3837,7 @@ function Sprites.getBishop 1
     push constant 9
     push local 0
     add
-    push constant 4092
+    push constant 3900
     pop temp 0
     pop pointer 1
     push temp 0
@@ -321,7 +3845,8 @@ function Sprites.getBishop 1
     push constant 10
     push local 0
     add
-    push constant 2040
+    push constant 16
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -329,7 +3854,8 @@ function Sprites.getBishop 1
     push constant 11
     push local 0
     add
-    push constant 8190
+    push constant 16
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -337,7 +3863,8 @@ function Sprites.getBishop 1
     push constant 12
     push local 0
     add
-    push constant 8190
+    push constant 16
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -345,21 +3872,368 @@ function Sprites.getBishop 1
     push constant 13
     push local 0
     add
-    push constant 16383
+    push constant 16
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
-    push local 0
-    return
-function Sprites.getRook 1
     push constant 14
-    call Array.new 1
-    pop local 0
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 15
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 16
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 17
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 18
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 19
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 20
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 21
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 22
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 23
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 24
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 25
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 26
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 27
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 28
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 29
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 30
+    push local 0
+    add
+    push constant 3903
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 31
+    push local 0
+    add
+    push constant 3903
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 32
+    push local 0
+    add
+    push constant 3855
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 33
+    push local 0
+    add
+    push constant 3855
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 34
+    push local 0
+    add
+    push constant 975
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 35
+    push local 0
+    add
+    push constant 975
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 36
+    push local 0
+    add
+    push constant 975
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 37
+    push local 0
+    add
+    push constant 975
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 38
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 39
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 40
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 41
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 42
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 43
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 44
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 45
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 46
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 47
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 48
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 49
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 50
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 51
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 52
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 53
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 54
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 55
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    goto Sprites_8
+label Sprites_9
     push constant 0
     push local 0
     add
-    push constant 6966
+    push constant 4032
     pop temp 0
     pop pointer 1
     push temp 0
@@ -367,7 +4241,7 @@ function Sprites.getRook 1
     push constant 1
     push local 0
     add
-    push constant 6966
+    push constant 2112
     pop temp 0
     pop pointer 1
     push temp 0
@@ -375,7 +4249,7 @@ function Sprites.getRook 1
     push constant 2
     push local 0
     add
-    push constant 6966
+    push constant 2127
     pop temp 0
     pop pointer 1
     push temp 0
@@ -383,7 +4257,7 @@ function Sprites.getRook 1
     push constant 3
     push local 0
     add
-    push constant 8190
+    push constant 2505
     pop temp 0
     pop pointer 1
     push temp 0
@@ -391,7 +4265,7 @@ function Sprites.getRook 1
     push constant 4
     push local 0
     add
-    push constant 8190
+    push constant 2313
     pop temp 0
     pop pointer 1
     push temp 0
@@ -399,7 +4273,7 @@ function Sprites.getRook 1
     push constant 5
     push local 0
     add
-    push constant 8190
+    push constant 2331
     pop temp 0
     pop pointer 1
     push temp 0
@@ -407,7 +4281,7 @@ function Sprites.getRook 1
     push constant 6
     push local 0
     add
-    push constant 8190
+    push constant 2354
     pop temp 0
     pop pointer 1
     push temp 0
@@ -415,7 +4289,7 @@ function Sprites.getRook 1
     push constant 7
     push local 0
     add
-    push constant 2040
+    push constant 2342
     pop temp 0
     pop pointer 1
     push temp 0
@@ -423,7 +4297,7 @@ function Sprites.getRook 1
     push constant 8
     push local 0
     add
-    push constant 2040
+    push constant 2340
     pop temp 0
     pop pointer 1
     push temp 0
@@ -431,7 +4305,7 @@ function Sprites.getRook 1
     push constant 9
     push local 0
     add
-    push constant 2040
+    push constant 2412
     pop temp 0
     pop pointer 1
     push temp 0
@@ -439,7 +4313,8 @@ function Sprites.getRook 1
     push constant 10
     push local 0
     add
-    push constant 4092
+    push constant 1656
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -447,7 +4322,7 @@ function Sprites.getRook 1
     push constant 11
     push local 0
     add
-    push constant 8190
+    push constant 24
     pop temp 0
     pop pointer 1
     push temp 0
@@ -455,7 +4330,7 @@ function Sprites.getRook 1
     push constant 12
     push local 0
     add
-    push constant 16383
+    push constant 16
     pop temp 0
     pop pointer 1
     push temp 0
@@ -463,139 +4338,366 @@ function Sprites.getRook 1
     push constant 13
     push local 0
     add
-    push constant 16383
+    push constant 112
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
-    push local 0
-    return
-function Sprites.getQueen 1
     push constant 14
-    call Array.new 1
-    pop local 0
-    push constant 0
     push local 0
     add
-    push constant 1848
+    push constant 64
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
-    push constant 1
+    push constant 15
     push local 0
     add
-    push constant 14139
+    push constant 64
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
-    push constant 2
+    push constant 16
     push local 0
     add
-    push constant 13107
+    push constant 64
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
-    push constant 3
+    push constant 17
     push local 0
     add
-    push constant 6966
+    push constant 64
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
+    push constant 18
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 19
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 20
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 21
+    push local 0
+    add
+    push constant 16
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 22
+    push local 0
+    add
     push constant 4
-    push local 0
-    add
-    push constant 6966
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
-    push constant 5
+    push constant 23
     push local 0
     add
-    push constant 4092
+    push constant 4
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
-    push constant 6
+    push constant 24
     push local 0
     add
-    push constant 4092
+    push constant 1
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
-    push constant 7
+    push constant 25
     push local 0
     add
-    push constant 2040
+    push constant 1
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
-    push constant 8
+    push constant 26
     push local 0
     add
-    push constant 2040
+    push constant 1
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
-    push constant 9
+    push constant 27
     push local 0
     add
-    push constant 2040
+    push constant 1
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
-    push constant 10
+    push constant 28
     push local 0
     add
-    push constant 4092
+    push constant 63
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
-    push constant 11
+    push constant 29
     push local 0
     add
-    push constant 8190
+    push constant 33
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
-    push constant 12
+    push constant 30
     push local 0
     add
-    push constant 16383
+    push constant 3873
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
-    push constant 13
+    push constant 31
     push local 0
     add
-    push constant 16383
+    push constant 2361
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
+    push constant 32
+    push local 0
+    add
+    push constant 2313
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 33
+    push local 0
+    add
+    push constant 3465
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 34
+    push local 0
+    add
+    push constant 1225
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 35
+    push local 0
+    add
+    push constant 1609
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 36
+    push local 0
+    add
+    push constant 585
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 37
+    push local 0
+    add
+    push constant 873
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 38
+    push local 0
+    add
+    push constant 281
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 39
+    push local 0
+    add
+    push constant 384
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 40
+    push local 0
+    add
+    push constant 128
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 41
+    push local 0
+    add
+    push constant 224
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 42
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 43
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 44
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 45
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 46
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 47
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 48
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 49
+    push local 0
+    add
+    push constant 128
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 50
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 51
+    push local 0
+    add
+    push constant 512
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 52
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 53
+    push local 0
+    add
+    push constant 2048
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 54
+    push local 0
+    add
+    push constant 2048
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 55
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+label Sprites_8
     push local 0
     return
 function Sprites.getKing 1
-    push constant 14
+    push constant 56
     call Array.new 1
     pop local 0
+    push argument 0
+    not
+    if-goto Sprites_11
     push constant 0
     push local 0
     add
-    push constant 192
+    push constant 4096
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -603,7 +4705,8 @@ function Sprites.getKing 1
     push constant 1
     push local 0
     add
-    push constant 192
+    push constant 4096
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -611,7 +4714,8 @@ function Sprites.getKing 1
     push constant 2
     push local 0
     add
-    push constant 1008
+    push constant 4096
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -619,7 +4723,8 @@ function Sprites.getKing 1
     push constant 3
     push local 0
     add
-    push constant 192
+    push constant 4096
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -627,7 +4732,8 @@ function Sprites.getKing 1
     push constant 4
     push local 0
     add
-    push constant 192
+    push constant 256
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -635,7 +4741,8 @@ function Sprites.getKing 1
     push constant 5
     push local 0
     add
-    push constant 2040
+    push constant 256
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -643,7 +4750,8 @@ function Sprites.getKing 1
     push constant 6
     push local 0
     add
-    push constant 1008
+    push constant 4096
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -651,7 +4759,8 @@ function Sprites.getKing 1
     push constant 7
     push local 0
     add
-    push constant 1008
+    push constant 4096
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -659,7 +4768,8 @@ function Sprites.getKing 1
     push constant 8
     push local 0
     add
-    push constant 4092
+    push constant 4096
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -667,7 +4777,8 @@ function Sprites.getKing 1
     push constant 9
     push local 0
     add
-    push constant 2040
+    push constant 4096
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -675,7 +4786,8 @@ function Sprites.getKing 1
     push constant 10
     push local 0
     add
-    push constant 2040
+    push constant 64
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -683,7 +4795,8 @@ function Sprites.getKing 1
     push constant 11
     push local 0
     add
-    push constant 2040
+    push constant 64
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -691,7 +4804,8 @@ function Sprites.getKing 1
     push constant 12
     push local 0
     add
-    push constant 8190
+    push constant 256
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
@@ -699,90 +4813,913 @@ function Sprites.getKing 1
     push constant 13
     push local 0
     add
-    push constant 16383
+    push constant 256
+    neg
     pop temp 0
     pop pointer 1
     push temp 0
     pop that 0
+    push constant 14
+    push local 0
+    add
+    push constant 256
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 15
+    push local 0
+    add
+    push constant 256
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 16
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 17
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 18
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 19
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 20
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 21
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 22
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 23
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 24
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 25
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 26
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 27
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 28
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 29
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 30
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 31
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 32
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 33
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 34
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 35
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 36
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 37
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 38
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 39
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 40
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 41
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 42
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 43
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 44
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 45
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 46
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 47
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 48
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 49
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 50
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 51
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 52
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 53
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 54
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 55
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    goto Sprites_10
+label Sprites_11
+    push constant 0
+    push local 0
+    add
+    push constant 4096
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 1
+    push local 0
+    add
+    push constant 28672
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 2
+    push local 0
+    add
+    push constant 28672
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 3
+    push local 0
+    add
+    push constant 24832
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 4
+    push local 0
+    add
+    push constant 256
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 5
+    push local 0
+    add
+    push constant 24832
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 6
+    push local 0
+    add
+    push constant 28672
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 7
+    push local 0
+    add
+    push constant 28672
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 8
+    push local 0
+    add
+    push constant 28672
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 9
+    push local 0
+    add
+    push constant 28672
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 10
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 11
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 12
+    push local 0
+    add
+    push constant 64
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 13
+    push local 0
+    add
+    push constant 256
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 14
+    push local 0
+    add
+    push constant 256
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 15
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 16
+    push local 0
+    add
+    push constant 16
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 17
+    push local 0
+    add
+    push constant 16
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 18
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 19
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 20
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 21
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 22
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 23
+    push local 0
+    add
+    push constant 64
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 24
+    push local 0
+    add
+    push constant 4
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 25
+    push local 0
+    add
+    push constant 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 26
+    push local 0
+    add
+    push constant 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 27
+    push local 0
+    add
+    push constant 1
+    neg
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 28
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 29
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 30
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 31
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 32
+    push local 0
+    add
+    push constant 8
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 33
+    push local 0
+    add
+    push constant 15
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 34
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 35
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 36
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 37
+    push local 0
+    add
+    push constant 0
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 38
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 39
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 40
+    push local 0
+    add
+    push constant 63
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 41
+    push local 0
+    add
+    push constant 8
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 42
+    push local 0
+    add
+    push constant 8
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 43
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 44
+    push local 0
+    add
+    push constant 128
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 45
+    push local 0
+    add
+    push constant 255
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 46
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 47
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 48
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 49
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 50
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 51
+    push local 0
+    add
+    push constant 32
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 52
+    push local 0
+    add
+    push constant 1023
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 53
+    push local 0
+    add
+    push constant 1024
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 54
+    push local 0
+    add
+    push constant 2048
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 55
+    push local 0
+    add
+    push constant 4095
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+label Sprites_10
     push local 0
     return
-function Sprites.getSprite 5
-    push constant 28
+function Sprites.getSprite 6
+    push constant 84
     call Array.new 1
-    pop local 3
+    pop local 4
     push argument 0
     push constant 0
     eq
     not
-    if-goto Sprites_1
-    call Sprites.getPawn 0
-    pop local 4
-    goto Sprites_0
-label Sprites_1
-label Sprites_0
+    if-goto Sprites_13
+    push argument 2
+    call Sprites.getPawn 1
+    pop local 5
+    goto Sprites_12
+label Sprites_13
+label Sprites_12
     push argument 0
     push constant 1
     eq
     not
-    if-goto Sprites_3
-    call Sprites.getKnight 0
-    pop local 4
-    goto Sprites_2
-label Sprites_3
-label Sprites_2
+    if-goto Sprites_15
+    push argument 2
+    call Sprites.getKnight 1
+    pop local 5
+    goto Sprites_14
+label Sprites_15
+label Sprites_14
     push argument 0
     push constant 2
     eq
     not
-    if-goto Sprites_5
-    call Sprites.getBishop 0
-    pop local 4
-    goto Sprites_4
-label Sprites_5
-label Sprites_4
+    if-goto Sprites_17
+    push argument 2
+    call Sprites.getBishop 1
+    pop local 5
+    goto Sprites_16
+label Sprites_17
+label Sprites_16
     push argument 0
     push constant 3
     eq
     not
-    if-goto Sprites_7
-    call Sprites.getRook 0
-    pop local 4
-    goto Sprites_6
-label Sprites_7
-label Sprites_6
+    if-goto Sprites_19
+    push argument 2
+    call Sprites.getRook 1
+    pop local 5
+    goto Sprites_18
+label Sprites_19
+label Sprites_18
     push argument 0
     push constant 4
     eq
     not
-    if-goto Sprites_9
-    call Sprites.getQueen 0
-    pop local 4
-    goto Sprites_8
-label Sprites_9
-label Sprites_8
+    if-goto Sprites_21
+    push argument 2
+    call Sprites.getQueen 1
+    pop local 5
+    goto Sprites_20
+label Sprites_21
+label Sprites_20
     push argument 0
     push constant 5
     eq
     not
-    if-goto Sprites_11
-    call Sprites.getKing 0
-    pop local 4
-    goto Sprites_10
-label Sprites_11
-label Sprites_10
+    if-goto Sprites_23
+    push argument 2
+    call Sprites.getKing 1
+    pop local 5
+    goto Sprites_22
+label Sprites_23
+label Sprites_22
     push constant 0
     pop local 0
-label Sprites_12
+label Sprites_24
     push local 0
-    push constant 14
+    push constant 56
     lt
     not
-    if-goto Sprites_13
-    push local 0
-    push local 3
-    add
+    if-goto Sprites_25
     push local 0
     push local 4
+    add
+    push local 0
+    push local 5
     add
     pop pointer 1
     push that 0
@@ -794,59 +5731,42 @@ label Sprites_12
     push constant 1
     add
     pop local 0
-    goto Sprites_12
-label Sprites_13
+    goto Sprites_24
+label Sprites_25
     push constant 0
     pop local 0
-label Sprites_14
+label Sprites_26
     push local 0
     push argument 1
     lt
     not
-    if-goto Sprites_15
+    if-goto Sprites_27
     push constant 0
     pop local 1
-    push constant 14
+    push constant 28
     pop local 2
-label Sprites_16
+    push constant 56
+    pop local 3
+label Sprites_28
     push local 1
-    push constant 14
+    push constant 28
     lt
     not
-    if-goto Sprites_17
-    push local 1
-    push local 3
+    if-goto Sprites_29
+    push local 2
+    push local 4
     add
     pop pointer 1
     push that 0
     push constant 0
     lt
     not
-    if-goto Sprites_19
-    push local 1
+    if-goto Sprites_31
     push local 3
+    push local 4
     add
-    pop pointer 1
-    push that 0
-    push constant 0
-    eq
-    not
-    if-goto Sprites_21
-    push local 2
     push local 3
-    add
-    push constant 1
-    pop temp 0
-    pop pointer 1
-    push temp 0
-    pop that 0
-    goto Sprites_20
-label Sprites_21
-    push local 2
-    push local 3
-    add
-    push local 2
-    push local 3
+    push local 4
     add
     pop pointer 1
     push that 0
@@ -858,12 +5778,53 @@ label Sprites_21
     pop pointer 1
     push temp 0
     pop that 0
-label Sprites_20
-    push local 1
+    goto Sprites_30
+label Sprites_31
     push local 3
+    push local 4
+    add
+    push local 3
+    push local 4
+    add
+    pop pointer 1
+    push that 0
+    push constant 2
+    call Math.multiply 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+label Sprites_30
+    push local 1
+    push local 4
+    add
+    pop pointer 1
+    push that 0
+    push constant 0
+    lt
+    not
+    if-goto Sprites_33
+    push local 2
+    push local 4
+    add
+    push local 2
+    push local 4
+    add
+    pop pointer 1
+    push that 0
+    push constant 2
+    call Math.multiply 2
+    push constant 1
+    add
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 1
+    push local 4
     add
     push local 1
-    push local 3
+    push local 4
     add
     pop pointer 1
     push that 0
@@ -875,13 +5836,13 @@ label Sprites_20
     pop pointer 1
     push temp 0
     pop that 0
-    goto Sprites_18
-label Sprites_19
+    goto Sprites_32
+label Sprites_33
     push local 1
-    push local 3
+    push local 4
     add
     push local 1
-    push local 3
+    push local 4
     add
     pop pointer 1
     push that 0
@@ -892,10 +5853,10 @@ label Sprites_19
     push temp 0
     pop that 0
     push local 2
-    push local 3
+    push local 4
     add
     push local 2
-    push local 3
+    push local 4
     add
     pop pointer 1
     push that 0
@@ -905,7 +5866,11 @@ label Sprites_19
     pop pointer 1
     push temp 0
     pop that 0
-label Sprites_18
+label Sprites_32
+    push local 3
+    push constant 1
+    add
+    pop local 3
     push local 2
     push constant 1
     add
@@ -914,13 +5879,13 @@ label Sprites_18
     push constant 1
     add
     pop local 1
-    goto Sprites_16
-label Sprites_17
+    goto Sprites_28
+label Sprites_29
     push local 0
     push constant 1
     add
     pop local 0
-    goto Sprites_14
-label Sprites_15
-    push local 3
+    goto Sprites_26
+label Sprites_27
+    push local 4
     return

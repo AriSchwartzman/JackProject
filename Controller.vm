@@ -1,0 +1,68 @@
+function Controller.new 0
+    push constant 2
+    call Memory.alloc 1
+    pop pointer 0
+    push constant 0
+    pop this 0
+    push constant 0
+    pop this 1
+    push pointer 0
+    return
+function Controller.getInput 1
+    push argument 0
+    pop pointer 0
+    call Keyboard.keyPressed 0
+    pop local 0
+    push local 0
+    push constant 48
+    gt
+    push local 0
+    push constant 58
+    lt
+    and
+    not
+    if-goto Controller_1
+    push local 0
+    push constant 48
+    sub
+    pop this 0
+    goto Controller_0
+label Controller_1
+label Controller_0
+    push local 0
+    push constant 96
+    gt
+    push local 0
+    push constant 105
+    lt
+    and
+    not
+    if-goto Controller_3
+    push local 0
+    pop this 1
+    goto Controller_2
+label Controller_3
+label Controller_2
+    push local 0
+    push constant 128
+    eq
+    not
+    if-goto Controller_5
+    push constant 1
+    neg
+    return
+    goto Controller_4
+label Controller_5
+label Controller_4
+    push constant 0
+    return
+function Controller.getRankInput 0
+    push argument 0
+    pop pointer 0
+    push this 0
+    return
+function Controller.getFileInput 0
+    push argument 0
+    pop pointer 0
+    push this 1
+    return

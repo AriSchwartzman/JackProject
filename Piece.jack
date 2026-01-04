@@ -18,10 +18,11 @@ class Piece {
     field char file;
     field boolean color;
 
-    constructor Piece new(int atype, char afile, int arank) {
+    constructor Piece new(int atype, char afile, int arank, boolean acolor) {
         let type = atype;
         let rank = arank;
         let file = afile;
+        let color = acolor;
         return this;
     }
 
@@ -39,5 +40,9 @@ class Piece {
 
     method int getFileInt() {
         return file - 60;
+    }
+
+    method boolean getColor() {
+        return color;
     }
 }
