@@ -188,6 +188,46 @@ class Controller {
                 }
             }
         }
+				else {
+						if(file > 97) {
+                let piece = board.getPiece(rank - 1, file - 1);
+                if(piece > 0 & (~piece.getColor())) {
+                    do Output.printInt(allowedFiles[counter]);
+                    do Output.printInt(allowedRanks[counter]);
+                    do Output.println();
+                    let allowedRanks[counter] = rank - 1;
+                    let allowedFiles[counter] = file - 1;
+                    let counter = counter + 1;
+                }
+            }
+
+            if(file < 104) {
+                let piece = board.getPiece(rank - 1, file + 1);
+                if(piece > 0) {
+                    let allowedRanks[counter] = rank - 1;
+                    let allowedFiles[counter] = file + 1;
+                    let counter = counter + 1;
+                }
+            }
+
+            if(rank > 1) {
+                let piece = board.getPiece(rank - 1, file);
+                if(piece = 0) {
+                    let allowedRanks[counter] = rank - 1;
+                    let allowedFiles[counter] = file;
+                    let counter = counter + 1;
+                }
+            }
+
+            if(rank = 7) {
+                let piece = board.getPiece(rank - 2, file);
+                if(piece = 0) {
+                    let allowedRanks[counter] = rank - 2;
+                    let allowedFiles[counter] = file;
+                    let counter = counter + 1;
+                }
+            }
+				}
 
         return;
     }
