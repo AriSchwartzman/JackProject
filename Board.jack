@@ -49,7 +49,8 @@ class Board {
 
             let counter = counter + 1;
         }
-        
+
+        do tempArray.dispose();
 
         return this;
     }
@@ -64,6 +65,21 @@ class Board {
 
     method Array getBoard() {
         return board;
+    }
+
+    method Piece getPiece(int rank, char file) {
+        var Array tempArray;
+
+        let tempArray = board[rank - 1];
+        return tempArray[file - 97];
+    }
+
+    method void setPiece(Piece piece, int rank, char file) {
+        var Array tempArray;
+
+        let tempArray = board[rank - 1];
+        let tempArray[file - 97] = piece;
+        return;
     }
 
 

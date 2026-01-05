@@ -2,21 +2,82 @@ class Main {
     function void main() {
         var Board board;
         var Controller controller;
+        var Piece selectedPiece;
+        var boolean playing, emptySquare, invalidMove;
 
         let board = Board.new();
+        let playing = true;
         let controller = Controller.new();
-        do Display.drawBoard(board);
+        do Sprites.init();
 
-        do Display.shadeRank(4);
-        do Display.shadeFile(101);
+        while(playing) {
+            do Display.drawBoard(board);
 
-        while(~controller.getInput()) {
-            do Sys.wait(10);
+            let emptySquare = true;
+            let invalidMove = true;
+
+            while(emptySquare) {
+
+                while(~controller.getInput(board)) {}
+
+                if(controller.getEscaped()) {
+                    let emptySquare = false;
+                    let invalidMove = false;
+                }
+                else {
+                    do Display.drawBoard(board);
+
+                    let selectedPiece = controller.selectPiece(board);
+
+                    if(selectedPiece > 0) {
+                        if(selectedPiece.getType() = 0) {
+                            do Output.printString("Pawn");
+                        }
+                        if(selectedPiece.getType() = 1) {
+                            do Output.printString("Knight");
+                        }
+                        if(selectedPiece.getType() = 2) {
+                            do Output.printString("Bishop");
+                        }
+                        if(selectedPiece.getType() = 3) {
+                            do Output.printString("Rook");
+                        }
+                        if(selectedPiece.getType() = 4) {
+                            do Output.printString("Queen");
+                        }
+                        if(selectedPiece.getType() = 5) {
+                            do Output.printString("King");
+                        }
+                        let emptySquare = false;
+                    }
+                    else {
+                        do Output.printString("Empty");
+                    }
+
+                    do Output.println();
+                    do Output.printInt(selectedPiece);
+                    do Output.println();
+                }
+
+                do controller.clearInputs();
+
+            }
+
+            while(invalidMove) {
+                while(~controller.getInput(board)) {}
+
+                if(controller.getEscaped()) {
+                    let emptySquare = false;
+                    let invalidMove = false;
+                }
+                else {
+                    do Display.drawBoard(board);
+                    let invalidMove = controller.movePiece(board, selectedPiece);
+                }
+
+                do controller.clearInputs();
+            }
         }
-
-        do Output.printInt(controller.getRankInput());
-        do Output.println();
-        do Output.printChar(controller.getFileInput());
 
         return;
     }

@@ -1,15 +1,5 @@
 class Display {
 
-    function void erase(Piece piece) {
-        var int x;
-        var int y;
-        let x = piece.getFileInt() - 1 * 32;
-        let y = piece.getRank() - 1 * 31;
-        do Screen.setColor(false);
-        do Screen.drawRectangle(x, y, x + 27, y + 27);
-        return;
-    }
-
     function void drawPiece(Piece piece) {
         var int counter0;
         var int counter0Plus28;
@@ -19,41 +9,142 @@ class Display {
         var int y;
         var int offset;
         var int memAddress;
+        
+        if(~piece.getCaptured()) {
+            let x = piece.getFileInt() + 3 * 32;
+            let y = piece.getRank() - 1 * 31 + 2;
+            let memAddress = 16384 + (32 * y) + (x / 16);
+            let offset = x - (16 * (x / 16));
+            let sprite = Sprites.getSprite(piece.getType(), offset, piece.getColor());
 
-        let x = piece.getFileInt() - 1 * 32;
-        let y = piece.getRank() - 1 * 31;
+            let counter0 = 0;
+            let counter0Plus28 = 28;
+            let counter0Plus56 = 56;
+            while(counter0 < 28) {
+                do Memory.poke(32 * counter0 + memAddress, sprite[counter0]);
+                do Memory.poke(32 * counter0 + memAddress + 1, sprite[counter0Plus28]);
+                do Memory.poke(32 * counter0 + memAddress + 2, sprite[counter0Plus56]);
+                let counter0 = counter0 + 1;
+                let counter0Plus28 = counter0Plus28 + 1;
+                let counter0Plus56 = counter0Plus56 + 1;
+            }
+        }
+
+        return;
+    }
+
+    function void repairPiece(Piece piece) {
+        var int counter;
+        var Array sprite;
+        var int x;
+        var int y;
+        var int offset;
+        var int memAddress;
+
+        let x = piece.getFileInt() + 3 * 32;
+        let y = piece.getRank() - 1 * 31 + 2;
         let memAddress = 16384 + (32 * y) + (x / 16);
         let offset = x - (16 * (x / 16));
         let sprite = Sprites.getSprite(piece.getType(), offset, piece.getColor());
 
-        let counter0 = 0;
-        let counter0Plus28 = 28;
-        let counter0Plus56 = 56;
-        while(counter0 < 28) {
-            do Memory.poke(32 * counter0 + memAddress, sprite[counter0]);
-            do Memory.poke(32 * counter0 + memAddress + 1, sprite[counter0Plus28]);
-            do Memory.poke(32 * counter0 + memAddress + 2, sprite[counter0Plus56]);
-            let counter0 = counter0 + 1;
-            let counter0Plus28 = counter0Plus28 + 1;
-            let counter0Plus56 = counter0Plus56 + 1;
+        let counter = 0;
+        while(counter < 28) {
+            do Memory.poke(32 * counter + memAddress, sprite[counter]);
+            let counter = counter + 1;
         }
-        do sprite.dispose();
+        let x = piece.getFile() - 94 * 32 - 1;
+        let y = piece.getRank() - 1 * 31;
+
+        do Screen.drawLine(x + 31, y + 2, x + 31, y + 29);
 
         return;
     }
     
+    // Draws one rank/row of the board
+    function void drawRank(Board board, int rank) {
+        var int counter;
+        var int x;
+        var int y;
+        /* do Output.printInt(board);
+        do Output.println();
+        do Output.printInt(rank);
+        do Output.println(); */
+        do Display.shadeRank(rank, false);
+        
+        let counter = 0;
+        while(counter < 8) {
+            do Display.drawPiece(board.getPiece(rank, counter + 97));
+            /* do Output.printString("Ranks");
+            do Output.println();
+            do Output.printInt(tempArray[counter]);
+            do Output.println(); */
+            let x = counter + 4 * 32 - 1;
+            let y = rank - 1 * 31;
+            do Screen.drawLine(x + 31, y + 2, x + 31, y + 29);
+            let counter = counter + 1;
+        }
+
+        return;
+    }
+    
+    // Draws one file/column of the board
+    function void drawFile(Board board, int file) {
+        var Piece piece;
+        var Piece rightPiece;
+        var int counter;
+        var int x;
+        var int y;
+        // do Output.printChar(file);
+        // do Output.println();
+        do Display.shadeFile(file, false);
+        let counter = 1;
+        while(counter < 9) {
+            let piece = board.getPiece(counter, file);
+            let rightPiece = board.getPiece(counter, file + 1);
+            do Display.drawPiece(piece);
+            if(piece > 0) {
+                if(file < 104) {
+                    if(rightPiece > 0) {
+                        do Display.repairPiece(rightPiece);
+                    }
+                    else {
+                        let x = file - 90 * 32 - 1;
+                        let y = counter - 1 * 31;
+                        do Screen.drawLine(x + 31, y + 2, x + 31, y + 29);
+                    }
+                }
+                if(file = 104) {
+                    let x = 351;
+                    let y = counter - 1 * 31;
+                    do Screen.drawLine(x + 31, y + 2, x + 31, y + 29);
+                }
+            }
+            /* do Output.printString("Files");
+            do Output.println();
+            do Output.printInt(tempArray[file - 97]);
+            do Output.println(); */
+            let counter = counter + 1;
+        }
+
+        return;
+        
+    }
 
     function void drawBoard(Board board) {
-        var Array whitePieces, blackPieces;
-        var int counter;
+        var Piece piece;
+        var int rank, file, counter;
         do Screen.clearScreen();
-        let blackPieces = board.getBlackPieces();
-        let whitePieces = board.getWhitePieces();
-        let counter = 0;
-        while(counter < 16) {
-            do Display.drawPiece(blackPieces[counter]);
-            do Display.drawPiece(whitePieces[counter]);
-            let counter = counter + 1;
+        let rank = 1;
+        while(rank < 9) {
+            let file = 97;
+            while(file < 105) {
+                let piece = board.getPiece(rank, file);
+                if(piece > 0) {
+                    do Display.drawPiece(piece);
+                }
+                let file = file + 1;
+            }
+            let rank = rank + 1;
         }
         
         do Display.drawRanks();
@@ -70,10 +161,11 @@ class Display {
             do Screen.drawLine(126, counter, 382, counter);
             let counter = counter + 31;
         }
-
         return;
     }
 
+
+    // Draws numbers associated with each rank/row of the board
     function void drawRanks() {
         var int memAddress; 
         let memAddress = 16384 + (13 * 32) + (112 / 16);
@@ -144,59 +236,54 @@ class Display {
         return;
     }
 
+
+    // Draws letters associated with each file/column of the board
     function void drawFiles() {
         var int memAddress;
         let memAddress = 16384 + (32 * 249) + (112 / 16);
-        // column 1
+        // Letter A
         do Memory.poke(memAddress +33, 24576);
         do Memory.poke(memAddress +65, -28672);
         do Memory.poke(memAddress +97, -4096);
         do Memory.poke(memAddress +129, -28672);
         do Memory.poke(memAddress +161, -28672);
-        // column 2
-        // column 3
+        // Letter B
         do Memory.poke(memAddress +35, 28672);
         do Memory.poke(memAddress +67, -28672);
         do Memory.poke(memAddress +99, 28672);
         do Memory.poke(memAddress +131, -28672);
         do Memory.poke(memAddress +163, 28672);
-        // column 4
-        // column 5
+        // Letter C
         do Memory.poke(memAddress +37, -8192);
         do Memory.poke(memAddress +69, 4096);
         do Memory.poke(memAddress +101, 4096);
         do Memory.poke(memAddress +133, 4096);
         do Memory.poke(memAddress +165, -8192);
-        // column 6
-        // column 7
+        // Letter D
         do Memory.poke(memAddress +39, 28672);
         do Memory.poke(memAddress +71, -28672);
         do Memory.poke(memAddress +103, -28672);
         do Memory.poke(memAddress +135, -28672);
         do Memory.poke(memAddress +167, 28672);
-        // column 8
-        // column 9
+        // Letter E
         do Memory.poke(memAddress +41, -4096);
         do Memory.poke(memAddress +73, 4096);
         do Memory.poke(memAddress +105, -4096);
         do Memory.poke(memAddress +137, 4096);
         do Memory.poke(memAddress +169, -4096);
-        // column 10
-        // column 11
+        // Letter F
         do Memory.poke(memAddress +43, -4096);
         do Memory.poke(memAddress +75, 4096);
         do Memory.poke(memAddress +107, -4096);
         do Memory.poke(memAddress +139, 4096);
         do Memory.poke(memAddress +171, 4096);
-        // column 12
-        // column 13
+        // Letter G
         do Memory.poke(memAddress +45, 24576);
         do Memory.poke(memAddress +77, 4096);
         do Memory.poke(memAddress +109, -12288);
         do Memory.poke(memAddress +141, -28672);
         do Memory.poke(memAddress +173, 24576);
-        // column 14
-        // column 15
+        // Letter H
         do Memory.poke(memAddress +47, -28672);
         do Memory.poke(memAddress +79, -28672);
         do Memory.poke(memAddress +111, -4096);
@@ -205,51 +292,60 @@ class Display {
         return;
     }
 
-    function void shadeSquare(int rank, int file, boolean direction) {
+    function void shadeSquare(int rank, int file, boolean direction, boolean erase) {
         var int x, y;
         let x = file - 93 * 32 - 1;
         let y = rank - 1 * 31;
-        if(direction) {
-            do Screen.drawLine(x, y + 31, x + 31, y);
-            do Screen.drawLine(x, y + 24, x + 24, y);
-            do Screen.drawLine(x + 8, y + 31, x + 31, y + 8);
-            do Screen.drawLine(x, y + 16, x + 16, y);
-            do Screen.drawLine(x + 16, y + 31, x + 31, y + 16);
-            do Screen.drawLine(x, y + 8, x + 8, y);
-            do Screen.drawLine(x + 24, y + 31, x + 31, y + 24);
+        if(erase) {
+            if(direction) {
+                do Screen.drawLine(x, y + 30, x + 30, y + 1);
+                do Screen.drawLine(x, y + 24, x + 24, y + 1);
+                do Screen.drawLine(x + 8, y + 30, x + 30, y + 8);
+                do Screen.drawLine(x, y + 16, x + 16, y + 1);
+                do Screen.drawLine(x + 16, y + 30, x + 30, y + 16);
+                do Screen.drawLine(x, y + 8, x + 8, y + 1);
+                do Screen.drawLine(x + 24, y + 30, x + 30, y + 24);
+            }
+            else {
+                do Screen.drawLine(x, y + 1, x + 30, y + 30);
+                do Screen.drawLine(x, y + 24, x + 8, y + 30);
+                do Screen.drawLine(x + 24, y + 1, x + 30, y + 8);
+                do Screen.drawLine(x, y + 16, x + 16, y + 30);
+                do Screen.drawLine(x + 16, y + 1, x + 30, y + 16);
+                do Screen.drawLine(x, y + 8, x + 24, y + 30);
+                do Screen.drawLine(x + 8, y + 1, x + 30, y + 24);
+            }
         }
         else {
-            do Screen.drawLine(x, y, x + 31, y + 31);
-            do Screen.drawLine(x, y + 24, x + 8, y + 31);
-            do Screen.drawLine(x + 24, y, x + 31, y + 8);
-            do Screen.drawLine(x, y + 16, x + 16, y + 31);
-            do Screen.drawLine(x + 16, y, x + 31, y + 16);
-            do Screen.drawLine(x, y + 8, x + 24, y + 31);
-            do Screen.drawLine(x + 8, y, x + 31, y + 24);
+            do Screen.drawRectangle(x, y + 1, x + 30, y + 30);
         }
         return;
     }
 
-    function void shadeRank(int rank) {
+    function void shadeRank(int rank, boolean erase) {
         var int file;
-
         let file = 97;
+        do Screen.setColor(erase);
         while(file < 105) {
-            do Display.shadeSquare(rank, file, true);
+            do Display.shadeSquare(rank, file, true, erase);
             let file = file + 1;
         }
 
+        do Screen.setColor(true);
+
         return;
     }
 
-    function void shadeFile(int file) {
+    function void shadeFile(int file, boolean erase) {
         var int rank;
-
         let rank = 1;
+        do Screen.setColor(erase);
         while(rank < 9) {
-            do Display.shadeSquare(rank, file, false);
+            do Display.shadeSquare(rank, file, false, erase);
             let rank = rank + 1;
         }
+
+        do Screen.setColor(true);
 
         return;
     }

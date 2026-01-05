@@ -1,5 +1,5 @@
 function Piece.new 0
-    push constant 4
+    push constant 5
     call Memory.alloc 1
     pop pointer 0
     push argument 0
@@ -10,6 +10,8 @@ function Piece.new 0
     pop this 2
     push argument 3
     pop this 3
+    push constant 0
+    pop this 4
     push pointer 0
     return
 function Piece.getType 0
@@ -31,11 +33,38 @@ function Piece.getFileInt 0
     push argument 0
     pop pointer 0
     push this 2
-    push constant 60
+    push constant 96
     sub
     return
 function Piece.getColor 0
     push argument 0
     pop pointer 0
     push this 3
+    return
+function Piece.setRank 0
+    push argument 0
+    pop pointer 0
+    push argument 1
+    pop this 1
+    push constant 0
+    return
+function Piece.setFile 0
+    push argument 0
+    pop pointer 0
+    push argument 1
+    pop this 2
+    push constant 0
+    return
+function Piece.getCaptured 0
+    push argument 0
+    pop pointer 0
+    push this 4
+    return
+function Piece.capture 0
+    push argument 0
+    pop pointer 0
+    push constant 1
+    neg
+    pop this 4
+    push constant 0
     return

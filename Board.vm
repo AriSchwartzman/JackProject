@@ -353,6 +353,9 @@ label Board_2
     pop local 0
     goto Board_2
 label Board_3
+    push local 1
+    call Array.dispose 1
+    pop temp 0
     push pointer 0
     return
 function Board.getWhitePieces 0
@@ -369,4 +372,46 @@ function Board.getBoard 0
     push argument 0
     pop pointer 0
     push this 2
+    return
+function Board.getPiece 1
+    push argument 0
+    pop pointer 0
+    push argument 1
+    push constant 1
+    sub
+    push this 2
+    add
+    pop pointer 1
+    push that 0
+    pop local 0
+    push argument 2
+    push constant 97
+    sub
+    push local 0
+    add
+    pop pointer 1
+    push that 0
+    return
+function Board.setPiece 1
+    push argument 0
+    pop pointer 0
+    push argument 2
+    push constant 1
+    sub
+    push this 2
+    add
+    pop pointer 1
+    push that 0
+    pop local 0
+    push argument 3
+    push constant 97
+    sub
+    push local 0
+    add
+    push argument 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push constant 0
     return

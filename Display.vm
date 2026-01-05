@@ -1,38 +1,13 @@
-function Display.erase 2
-    push argument 0
-    call Piece.getFileInt 1
-    push constant 1
-    sub
-    push constant 32
-    call Math.multiply 2
-    pop local 0
-    push argument 0
-    call Piece.getRank 1
-    push constant 1
-    sub
-    push constant 31
-    call Math.multiply 2
-    pop local 1
-    push constant 0
-    call Screen.setColor 1
-    pop temp 0
-    push local 0
-    push local 1
-    push local 0
-    push constant 27
-    add
-    push local 1
-    push constant 27
-    add
-    call Screen.drawRectangle 4
-    pop temp 0
-    push constant 0
-    return
 function Display.drawPiece 8
     push argument 0
+    call Piece.getCaptured 1
+    not
+    not
+    if-goto Display_1
+    push argument 0
     call Piece.getFileInt 1
-    push constant 1
-    sub
+    push constant 3
+    add
     push constant 32
     call Math.multiply 2
     pop local 4
@@ -42,6 +17,8 @@ function Display.drawPiece 8
     sub
     push constant 31
     call Math.multiply 2
+    push constant 2
+    add
     pop local 5
     push constant 16384
     push constant 32
@@ -74,12 +51,12 @@ function Display.drawPiece 8
     pop local 1
     push constant 56
     pop local 2
-label Display_0
+label Display_2
     push local 0
     push constant 28
     lt
     not
-    if-goto Display_1
+    if-goto Display_3
     push constant 32
     push local 0
     call Math.multiply 2
@@ -132,94 +109,382 @@ label Display_0
     push constant 1
     add
     pop local 2
+    goto Display_2
+label Display_3
     goto Display_0
 label Display_1
-    push local 3
-    call Array.dispose 1
-    pop temp 0
+label Display_0
     push constant 0
     return
-function Display.drawBoard 3
-    call Screen.clearScreen 0
-    pop temp 0
+function Display.repairPiece 6
     push argument 0
-    call Board.getBlackPieces 1
-    pop local 1
-    push argument 0
-    call Board.getWhitePieces 1
-    pop local 0
-    push constant 0
+    call Piece.getFileInt 1
+    push constant 3
+    add
+    push constant 32
+    call Math.multiply 2
     pop local 2
-label Display_2
+    push argument 0
+    call Piece.getRank 1
+    push constant 1
+    sub
+    push constant 31
+    call Math.multiply 2
+    push constant 2
+    add
+    pop local 3
+    push constant 16384
+    push constant 32
+    push local 3
+    call Math.multiply 2
+    add
     push local 2
     push constant 16
+    call Math.divide 2
+    add
+    pop local 5
+    push local 2
+    push constant 16
+    push local 2
+    push constant 16
+    call Math.divide 2
+    call Math.multiply 2
+    sub
+    pop local 4
+    push argument 0
+    call Piece.getType 1
+    push local 4
+    push argument 0
+    call Piece.getColor 1
+    call Sprites.getSprite 3
+    pop local 1
+    push constant 0
+    pop local 0
+label Display_4
+    push local 0
+    push constant 28
     lt
     not
-    if-goto Display_3
-    push local 2
+    if-goto Display_5
+    push constant 32
+    push local 0
+    call Math.multiply 2
+    push local 5
+    add
+    push local 0
     push local 1
     add
     pop pointer 1
     push that 0
-    call Display.drawPiece 1
+    call Memory.poke 2
     pop temp 0
-    push local 2
     push local 0
+    push constant 1
     add
-    pop pointer 1
-    push that 0
+    pop local 0
+    goto Display_4
+label Display_5
+    push argument 0
+    call Piece.getFile 1
+    push constant 94
+    sub
+    push constant 32
+    call Math.multiply 2
+    push constant 1
+    sub
+    pop local 2
+    push argument 0
+    call Piece.getRank 1
+    push constant 1
+    sub
+    push constant 31
+    call Math.multiply 2
+    pop local 3
+    push local 2
+    push constant 31
+    add
+    push local 3
+    push constant 2
+    add
+    push local 2
+    push constant 31
+    add
+    push local 3
+    push constant 29
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push constant 0
+    return
+function Display.drawRank 3
+    push argument 1
+    push constant 0
+    call Display.shadeRank 2
+    pop temp 0
+    push constant 0
+    pop local 0
+label Display_6
+    push local 0
+    push constant 8
+    lt
+    not
+    if-goto Display_7
+    push argument 0
+    push argument 1
+    push local 0
+    push constant 97
+    add
+    call Board.getPiece 3
     call Display.drawPiece 1
     pop temp 0
+    push local 0
+    push constant 4
+    add
+    push constant 32
+    call Math.multiply 2
+    push constant 1
+    sub
+    pop local 1
+    push argument 1
+    push constant 1
+    sub
+    push constant 31
+    call Math.multiply 2
+    pop local 2
+    push local 1
+    push constant 31
+    add
+    push local 2
+    push constant 2
+    add
+    push local 1
+    push constant 31
+    add
+    push local 2
+    push constant 29
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Display_6
+label Display_7
+    push constant 0
+    return
+function Display.drawFile 5
+    push argument 1
+    push constant 0
+    call Display.shadeFile 2
+    pop temp 0
+    push constant 1
+    pop local 2
+label Display_8
+    push local 2
+    push constant 9
+    lt
+    not
+    if-goto Display_9
+    push argument 0
+    push local 2
+    push argument 1
+    call Board.getPiece 3
+    pop local 0
+    push argument 0
+    push local 2
+    push argument 1
+    push constant 1
+    add
+    call Board.getPiece 3
+    pop local 1
+    push local 0
+    call Display.drawPiece 1
+    pop temp 0
+    push local 0
+    push constant 0
+    gt
+    not
+    if-goto Display_11
+    push argument 1
+    push constant 104
+    lt
+    not
+    if-goto Display_13
+    push local 1
+    push constant 0
+    gt
+    not
+    if-goto Display_15
+    push local 1
+    call Display.repairPiece 1
+    pop temp 0
+    goto Display_14
+label Display_15
+    push argument 1
+    push constant 90
+    sub
+    push constant 32
+    call Math.multiply 2
+    push constant 1
+    sub
+    pop local 3
+    push local 2
+    push constant 1
+    sub
+    push constant 31
+    call Math.multiply 2
+    pop local 4
+    push local 3
+    push constant 31
+    add
+    push local 4
+    push constant 2
+    add
+    push local 3
+    push constant 31
+    add
+    push local 4
+    push constant 29
+    add
+    call Screen.drawLine 4
+    pop temp 0
+label Display_14
+    goto Display_12
+label Display_13
+label Display_12
+    push argument 1
+    push constant 104
+    eq
+    not
+    if-goto Display_17
+    push constant 351
+    pop local 3
+    push local 2
+    push constant 1
+    sub
+    push constant 31
+    call Math.multiply 2
+    pop local 4
+    push local 3
+    push constant 31
+    add
+    push local 4
+    push constant 2
+    add
+    push local 3
+    push constant 31
+    add
+    push local 4
+    push constant 29
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    goto Display_16
+label Display_17
+label Display_16
+    goto Display_10
+label Display_11
+label Display_10
     push local 2
     push constant 1
     add
     pop local 2
-    goto Display_2
-label Display_3
+    goto Display_8
+label Display_9
+    push constant 0
+    return
+function Display.drawBoard 4
+    call Screen.clearScreen 0
+    pop temp 0
+    push constant 1
+    pop local 1
+label Display_18
+    push local 1
+    push constant 9
+    lt
+    not
+    if-goto Display_19
+    push constant 97
+    pop local 2
+label Display_20
+    push local 2
+    push constant 105
+    lt
+    not
+    if-goto Display_21
+    push argument 0
+    push local 1
+    push local 2
+    call Board.getPiece 3
+    pop local 0
+    push local 0
+    push constant 0
+    gt
+    not
+    if-goto Display_23
+    push local 0
+    call Display.drawPiece 1
+    pop temp 0
+    goto Display_22
+label Display_23
+label Display_22
+    push local 2
+    push constant 1
+    add
+    pop local 2
+    goto Display_20
+label Display_21
+    push local 1
+    push constant 1
+    add
+    pop local 1
+    goto Display_18
+label Display_19
     call Display.drawRanks 0
     pop temp 0
     call Display.drawFiles 0
     pop temp 0
     push constant 126
-    pop local 2
-label Display_4
-    push local 2
+    pop local 3
+label Display_24
+    push local 3
     push constant 414
     lt
     not
-    if-goto Display_5
-    push local 2
+    if-goto Display_25
+    push local 3
     push constant 0
-    push local 2
+    push local 3
     push constant 248
     call Screen.drawLine 4
     pop temp 0
-    push local 2
+    push local 3
     push constant 32
     add
-    pop local 2
-    goto Display_4
-label Display_5
+    pop local 3
+    goto Display_24
+label Display_25
     push constant 0
-    pop local 2
-label Display_6
-    push local 2
+    pop local 3
+label Display_26
+    push local 3
     push constant 279
     lt
     not
-    if-goto Display_7
+    if-goto Display_27
     push constant 126
-    push local 2
+    push local 3
     push constant 382
-    push local 2
+    push local 3
     call Screen.drawLine 4
     pop temp 0
-    push local 2
+    push local 3
     push constant 31
     add
-    pop local 2
-    goto Display_6
-label Display_7
+    pop local 3
+    goto Display_26
+label Display_27
     push constant 0
     return
 function Display.drawRanks 1
@@ -854,17 +1119,22 @@ function Display.shadeSquare 2
     push constant 31
     call Math.multiply 2
     pop local 1
+    push argument 3
+    not
+    if-goto Display_29
     push argument 2
     not
-    if-goto Display_9
+    if-goto Display_31
     push local 0
     push local 1
-    push constant 31
+    push constant 30
     add
     push local 0
-    push constant 31
+    push constant 30
     add
     push local 1
+    push constant 1
+    add
     call Screen.drawLine 4
     pop temp 0
     push local 0
@@ -875,100 +1145,18 @@ function Display.shadeSquare 2
     push constant 24
     add
     push local 1
+    push constant 1
+    add
     call Screen.drawLine 4
     pop temp 0
     push local 0
     push constant 8
     add
     push local 1
-    push constant 31
+    push constant 30
     add
     push local 0
-    push constant 31
-    add
-    push local 1
-    push constant 8
-    add
-    call Screen.drawLine 4
-    pop temp 0
-    push local 0
-    push local 1
-    push constant 16
-    add
-    push local 0
-    push constant 16
-    add
-    push local 1
-    call Screen.drawLine 4
-    pop temp 0
-    push local 0
-    push constant 16
-    add
-    push local 1
-    push constant 31
-    add
-    push local 0
-    push constant 31
-    add
-    push local 1
-    push constant 16
-    add
-    call Screen.drawLine 4
-    pop temp 0
-    push local 0
-    push local 1
-    push constant 8
-    add
-    push local 0
-    push constant 8
-    add
-    push local 1
-    call Screen.drawLine 4
-    pop temp 0
-    push local 0
-    push constant 24
-    add
-    push local 1
-    push constant 31
-    add
-    push local 0
-    push constant 31
-    add
-    push local 1
-    push constant 24
-    add
-    call Screen.drawLine 4
-    pop temp 0
-    goto Display_8
-label Display_9
-    push local 0
-    push local 1
-    push local 0
-    push constant 31
-    add
-    push local 1
-    push constant 31
-    add
-    call Screen.drawLine 4
-    pop temp 0
-    push local 0
-    push local 1
-    push constant 24
-    add
-    push local 0
-    push constant 8
-    add
-    push local 1
-    push constant 31
-    add
-    call Screen.drawLine 4
-    pop temp 0
-    push local 0
-    push constant 24
-    add
-    push local 1
-    push local 0
-    push constant 31
+    push constant 30
     add
     push local 1
     push constant 8
@@ -983,7 +1171,7 @@ label Display_9
     push constant 16
     add
     push local 1
-    push constant 31
+    push constant 1
     add
     call Screen.drawLine 4
     pop temp 0
@@ -991,8 +1179,102 @@ label Display_9
     push constant 16
     add
     push local 1
+    push constant 30
+    add
     push local 0
-    push constant 31
+    push constant 30
+    add
+    push local 1
+    push constant 16
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push local 1
+    push constant 8
+    add
+    push local 0
+    push constant 8
+    add
+    push local 1
+    push constant 1
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push constant 24
+    add
+    push local 1
+    push constant 30
+    add
+    push local 0
+    push constant 30
+    add
+    push local 1
+    push constant 24
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    goto Display_30
+label Display_31
+    push local 0
+    push local 1
+    push constant 1
+    add
+    push local 0
+    push constant 30
+    add
+    push local 1
+    push constant 30
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push local 1
+    push constant 24
+    add
+    push local 0
+    push constant 8
+    add
+    push local 1
+    push constant 30
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push constant 24
+    add
+    push local 1
+    push constant 1
+    add
+    push local 0
+    push constant 30
+    add
+    push local 1
+    push constant 8
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push local 1
+    push constant 16
+    add
+    push local 0
+    push constant 16
+    add
+    push local 1
+    push constant 30
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push constant 16
+    add
+    push local 1
+    push constant 1
+    add
+    push local 0
+    push constant 30
     add
     push local 1
     push constant 16
@@ -1007,7 +1289,7 @@ label Display_9
     push constant 24
     add
     push local 1
-    push constant 31
+    push constant 30
     add
     call Screen.drawLine 4
     pop temp 0
@@ -1015,59 +1297,92 @@ label Display_9
     push constant 8
     add
     push local 1
+    push constant 1
+    add
     push local 0
-    push constant 31
+    push constant 30
     add
     push local 1
     push constant 24
     add
     call Screen.drawLine 4
     pop temp 0
-label Display_8
+label Display_30
+    goto Display_28
+label Display_29
+    push local 0
+    push local 1
+    push constant 1
+    add
+    push local 0
+    push constant 30
+    add
+    push local 1
+    push constant 30
+    add
+    call Screen.drawRectangle 4
+    pop temp 0
+label Display_28
     push constant 0
     return
 function Display.shadeRank 1
     push constant 97
     pop local 0
-label Display_10
+    push argument 1
+    call Screen.setColor 1
+    pop temp 0
+label Display_32
     push local 0
     push constant 105
     lt
     not
-    if-goto Display_11
+    if-goto Display_33
     push argument 0
     push local 0
     push constant 1
     neg
-    call Display.shadeSquare 3
+    push argument 1
+    call Display.shadeSquare 4
     pop temp 0
     push local 0
     push constant 1
     add
     pop local 0
-    goto Display_10
-label Display_11
+    goto Display_32
+label Display_33
+    push constant 1
+    neg
+    call Screen.setColor 1
+    pop temp 0
     push constant 0
     return
 function Display.shadeFile 1
     push constant 1
     pop local 0
-label Display_12
+    push argument 1
+    call Screen.setColor 1
+    pop temp 0
+label Display_34
     push local 0
     push constant 9
     lt
     not
-    if-goto Display_13
+    if-goto Display_35
     push local 0
     push argument 0
     push constant 0
-    call Display.shadeSquare 3
+    push argument 1
+    call Display.shadeSquare 4
     pop temp 0
     push local 0
     push constant 1
     add
     pop local 0
-    goto Display_12
-label Display_13
+    goto Display_34
+label Display_35
+    push constant 1
+    neg
+    call Screen.setColor 1
+    pop temp 0
     push constant 0
     return

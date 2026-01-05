@@ -11,18 +11,20 @@ types:
 
 ranks: 1 - 8
 files: a - h
+colors: true = black, false = white
 */
 
 class Piece {
     field int type, rank;
     field char file;
-    field boolean color;
+    field boolean color, captured;
 
     constructor Piece new(int atype, char afile, int arank, boolean acolor) {
         let type = atype;
         let rank = arank;
         let file = afile;
         let color = acolor;
+        let captured = false;
         return this;
     }
 
@@ -39,10 +41,30 @@ class Piece {
     }
 
     method int getFileInt() {
-        return file - 60;
+        return file - 96;
     }
 
     method boolean getColor() {
         return color;
     }
+
+    method void setRank(int newRank) {
+        let rank = newRank;
+        return;
+    }
+
+    method void setFile(char newFile) {
+        let file = newFile;
+        return;
+    }
+
+    method boolean getCaptured() {
+        return captured;
+    }
+
+    method void capture() {
+        let captured = true;
+        return;
+    }
+
 }
