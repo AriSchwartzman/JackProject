@@ -64,6 +64,9 @@ class Piece {
 
     method void capture() {
         let captured = true;
+        if(type = 5) {
+            do Main.endGame(~color);
+        }
         return;
     }
 

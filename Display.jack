@@ -1,9 +1,16 @@
 class Display {
     static Piece selectedPiece;
-    static int messageLength;
+    static String whiteMessage, blackMessage, pawnMessage, knightMessage, bishopMessage, rookMessage, queenMessage, kingMessage;
 
-    function void setMessageLength(int length) {
-        let messageLength = length;
+    function void setMessages() {
+        let whiteMessage = "White's Turn";
+        let blackMessage = "Black's Turn";
+        let pawnMessage = " Pawn";
+        let knightMessage = " Knight";
+        let bishopMessage = " Bishop";
+        let rookMessage = " Rook";
+        let queenMessage = " Queen";
+        let kingMessage = " King";
         return;
     }
 
@@ -138,15 +145,13 @@ class Display {
     }
 
     function void writeMessage() {
-        while(messageLength > 0) {
-            do Output.backSpace();
-            let messageLength = messageLength - 1;
-        }
+
+        do Output.moveCursor(0,0);
         if(Controller.getTurn()) {
-                do Output.printString("Black's Turn");
+            do Output.printString(blackMessage);
         }
         else {
-            do Output.printString("White's Turn");
+            do Output.printString(whiteMessage);
         }
 
         do Output.println();
@@ -155,32 +160,23 @@ class Display {
             do Output.printChar(selectedPiece.getFile() - 32);
             do Output.printInt(selectedPiece.getRank());
             if(selectedPiece.getType() = 0) {
-                do Output.printString(" Pawn");
-                let messageLength = 20;
+                do Output.printString(pawnMessage);
             }
             if(selectedPiece.getType() = 1) {
-                do Output.printString(" Knight");
-                let messageLength = 22;
+                do Output.printString(knightMessage);
             }
             if(selectedPiece.getType() = 2) {
-                do Output.printString(" Bishop");
-                let messageLength = 22;
+                do Output.printString(bishopMessage);
             }
             if(selectedPiece.getType() = 3) {
-                do Output.printString(" Rook");
-                let messageLength = 20;
+                do Output.printString(rookMessage);
             }
             if(selectedPiece.getType() = 4) {
-                do Output.printString(" Queen");
-                let messageLength = 21;
+                do Output.printString(queenMessage);
             }
             if(selectedPiece.getType() = 5) {
-                do Output.printString(" King");
-                let messageLength = 20;
+                do Output.printString(kingMessage);
             }
-        }
-        else {
-            let messageLength = 13;
         }
 
         return;
@@ -191,7 +187,6 @@ class Display {
         var Piece piece;
         var int rank, file, counter;
         do Screen.clearScreen();
-        do Display.writeMessage();
         let rank = 1;
         while(rank < 9) {
             let file = 97;
@@ -219,6 +214,8 @@ class Display {
             do Screen.drawLine(126, counter, 382, counter);
             let counter = counter + 31;
         }
+        do Display.highlightSelectedSquare();
+        do Display.writeMessage();
         return;
     }
 

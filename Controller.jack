@@ -30,8 +30,14 @@ class Controller {
 
     method boolean getInput(Board board) {
         var int input;
+        var boolean rightPressed, leftPressed, upPressed, downPressed;
 
         let input = Keyboard.keyPressed();
+
+        if(rightPressed & ~(input = 132)) {let rightPressed = false;}
+        if(leftPressed & ~(input = 130)) {let leftPressed = false;}
+        if(upPressed & ~(input = 131)) {let upPressed = false;}
+        if(downPressed & ~(input = 133)) {let downPressed = false;}
 
         if(input > 48 & (input < 57) & ~(input = rankInput)) {
             do Display.drawBoard(board);
@@ -50,6 +56,74 @@ class Controller {
             let fileInput = input;
             if(rankInput > 0) {
                 do Display.shadeRank(rankInput - 48, true);
+            }
+            do Display.highlightSelectedSquare();
+            do Display.writeMessage();
+        }
+
+        if(input = 130 & ~leftPressed) {
+            let leftPressed = true;
+            if(fileInput = 0 | (fileInput = 97)) {
+                let fileInput = 104;
+            }
+            else {
+                let fileInput = fileInput - 1;
+            }
+            do Display.drawBoard(board);
+            do Display.shadeFile(fileInput, true);
+            if(rankInput > 0) {
+                do Display.shadeRank(rankInput - 48, true);
+            }
+            do Display.highlightSelectedSquare();
+            do Display.writeMessage();
+        }
+
+        if(input = 132 & ~rightPressed) {
+            let rightPressed = true;
+            if(fileInput = 0 | (fileInput = 104)) {
+                let fileInput = 97;
+            }
+            else {
+                let fileInput = fileInput + 1;
+            }
+            do Display.drawBoard(board);
+            do Display.shadeFile(fileInput, true);
+            if(rankInput > 0) {
+                do Display.shadeRank(rankInput - 48, true);
+            }
+            do Display.highlightSelectedSquare();
+            do Display.writeMessage();
+        }
+
+        if(input = 131 & ~upPressed) {
+            let upPressed = true;
+            if(rankInput = 0 | (rankInput = 49)) {
+                let rankInput = 56;
+            }
+            else {
+                let rankInput = rankInput - 1;
+            }
+            do Display.drawBoard(board);
+            do Display.shadeRank(rankInput - 48, true);
+            if(fileInput > 0) {
+                do Display.shadeFile(fileInput, true);
+            }
+            do Display.highlightSelectedSquare();
+            do Display.writeMessage();
+        }
+
+        if(input = 133 & ~downPressed) {
+            let downPressed = true;
+            if(rankInput = 0 | (rankInput = 56)) {
+                let rankInput = 49;
+            }
+            else {
+                let rankInput = rankInput + 1;
+            }
+            do Display.drawBoard(board);
+            do Display.shadeRank(rankInput - 48, true);
+            if(fileInput > 0) {
+                do Display.shadeFile(fileInput, true);
             }
             do Display.highlightSelectedSquare();
             do Display.writeMessage();
@@ -104,7 +178,7 @@ class Controller {
     // Returns true if move is invalid and false if the move is valid
     method boolean movePiece(Board board, Piece piece) {
         var int oldRank, oldFile, newRank, newFile;
-        var Piece oldPiece;
+        var Piece capturePiece;
 
         let oldRank = piece.getRank();
         let oldFile = piece.getFile();
@@ -112,16 +186,17 @@ class Controller {
         let newRank = rankInput - 48;
         let newFile = fileInput;
 
-        let oldPiece = board.getPiece(newRank, newFile);
+        let capturePiece = board.getPiece(newRank, newFile);
         
         do setAllowedMoves(board, piece);
         
-        if(moveIsAllowed(newRank, newFile)) {
+        // if the move is allowed and the square it is going to is either the opposite color or empty
+        if(moveIsAllowed(newRank, newFile) & (~(piece.getColor() = capturePiece.getColor()) | (capturePiece = 0))) {
             do board.setPiece(0, oldRank, oldFile);
             do board.setPiece(piece, newRank, newFile);
 
-            if(oldPiece > 0) {
-                do oldPiece.capture();
+            if(capturePiece > 0) {
+                do capturePiece.capture();
             }
 
             do piece.setRank(newRank);
@@ -136,7 +211,7 @@ class Controller {
     }
 
     method void setAllowedMoves(Board board, Piece piece) {
-        var boolean repeat, color;
+        var boolean color;
         var int totalCount, type, rank, file;
 
         let totalCount = 0;
@@ -146,7 +221,6 @@ class Controller {
             let totalCount = totalCount + 1;
         }
 
-        let repeat = true;
         let totalCount = 0;
         let type = piece.getType();
         let color = piece.getColor();
@@ -155,6 +229,21 @@ class Controller {
 
         if(type = 0) {
             do setPawnMove(board, rank, file, color);
+        }
+        if(type = 1) {
+            do setKnightMove(board, rank, file, color);
+        }
+        if(type = 2) {
+            do setBishopMove(board, rank, file, color);
+        }
+        if(type = 3) {
+            do setRookMove(board, rank, file, color);
+        }
+        if(type = 4) {
+            do setQueenMove(board, rank, file, color);
+        }
+        if(type = 5) {
+            do setKingMove(board, rank, file, color);
         }
 
         return;
@@ -168,7 +257,7 @@ class Controller {
         if(color) {
             if(file > 97) {
                 let piece = board.getPiece(rank + 1, file - 1);
-                if(piece > 0 & (~piece.getColor())) {
+                if(piece > 0) {
                     let allowedRanks[counter] = rank + 1;
                     let allowedFiles[counter] = file - 1;
                     let counter = counter + 1;
@@ -205,7 +294,7 @@ class Controller {
 		else {
 			if(file > 97) {
                 let piece = board.getPiece(rank - 1, file - 1);
-                if(piece > 0 & (~piece.getColor())) {
+                if(piece > 0) {
                     do Output.printInt(allowedFiles[counter]);
                     do Output.printInt(allowedRanks[counter]);
                     do Output.println();
@@ -241,7 +330,390 @@ class Controller {
                     let counter = counter + 1;
                 }
             }
-				}
+		}
+
+        return;
+    }
+
+    method void setKnightMove(Board board, int rank, int file, boolean color) {
+        var int counter;
+        var Piece piece;
+        let counter = 0;
+        // up up left
+        if(rank > 2 & (file > 97)) {
+            let allowedRanks[counter] = rank - 2;
+            let allowedFiles[counter] = file - 1;
+            let counter = counter + 1;
+        }
+        // up up right
+        if(rank > 2 & (file < 104)) {
+            let allowedRanks[counter] = rank - 2;
+            let allowedFiles[counter] = file + 1;
+            let counter = counter + 1;
+        }
+
+        // up left left
+        if(rank > 1 & (file > 98)) {
+            let allowedRanks[counter] = rank - 1;
+            let allowedFiles[counter] = file - 2;
+            let counter = counter + 1;
+        }
+
+        // up right right
+        if(rank > 1 & (file < 103)) {
+            let allowedRanks[counter] = rank - 1;
+            let allowedFiles[counter] = file + 2;
+            let counter = counter + 1;
+        }
+
+        // down down left
+        if(rank < 7 & (file > 97)) {
+            let allowedRanks[counter] = rank + 2;
+            let allowedFiles[counter] = file - 1;
+            let counter = counter + 1;
+        }
+        // down down right
+        if(rank < 7 & (file < 104)) {
+            let allowedRanks[counter] = rank + 2;
+            let allowedFiles[counter] = file + 1;
+            let counter = counter + 1;
+        }
+
+        // down left left
+        if(rank < 8 & (file > 98)) {
+            let allowedRanks[counter] = rank + 1;
+            let allowedFiles[counter] = file - 2;
+            let counter = counter + 1;
+        }
+
+        // down right right
+        if(rank < 8 & (file < 103)) {
+            let allowedRanks[counter] = rank + 1;
+            let allowedFiles[counter] = file + 2;
+            let counter = counter + 1;
+        }
+
+        return;
+    }
+
+    method void setBishopMove(Board board, int rank, int file, boolean color) {
+        
+        var int counter, tempRank, tempFile;
+        var Piece piece;
+        var boolean repeat;
+
+        let counter = 0;
+        let tempRank = rank;
+        let tempFile = file;
+        let repeat = true;
+
+        // up left loop
+        while(tempRank > 1 & (tempFile > 97) & repeat) {
+            let tempRank = tempRank - 1;
+            let tempFile = tempFile - 1;
+            if(~(board.getPiece(tempRank, tempFile) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = tempRank;
+            let allowedFiles[counter] = tempFile;
+            let counter = counter + 1;
+        }
+
+        let tempRank = rank;
+        let tempFile = file;
+        let repeat = true;
+        // up right loop
+        while(tempRank > 1 & (tempFile < 104) & repeat) {
+            let tempRank = tempRank - 1;
+            let tempFile = tempFile + 1;
+            if(~(board.getPiece(tempRank, tempFile) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = tempRank;
+            let allowedFiles[counter] = tempFile;
+            let counter = counter + 1;
+        }
+
+        let tempRank = rank;
+        let tempFile = file;
+        let repeat = true;
+        // down right loop
+        while(tempRank < 8 & (tempFile < 104) & repeat) {
+            let tempRank = tempRank + 1;
+            let tempFile = tempFile + 1;
+            if(~(board.getPiece(tempRank, tempFile) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = tempRank;
+            let allowedFiles[counter] = tempFile;
+            let counter = counter + 1;
+        }
+
+        let tempRank = rank;
+        let tempFile = file;
+        let repeat = true;
+        // down left loop
+        while(tempRank < 8 & (tempFile > 97) & repeat) {
+            let tempRank = tempRank + 1;
+            let tempFile = tempFile - 1;
+            if(~(board.getPiece(tempRank, tempFile) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = tempRank;
+            let allowedFiles[counter] = tempFile;
+            let counter = counter + 1;
+        }
+
+        return;
+    }
+
+    method void setRookMove(Board board, int rank, int file, boolean color) {
+        
+        var int counter, tempRank, tempFile;
+        var Piece piece;
+        var boolean repeat;
+
+        let counter = 0;
+        let tempRank = rank;
+        let repeat = true;
+
+        // up loop
+        while(tempRank > 1 & repeat) {
+            let tempRank = tempRank - 1;
+            if(~(board.getPiece(tempRank, file) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = tempRank;
+            let allowedFiles[counter] = file;
+            let counter = counter + 1;
+        }
+
+        let tempFile = file;
+        let repeat = true;
+        // right loop
+        while(tempFile < 104 & repeat) {
+            let tempFile = tempFile + 1;
+            if(~(board.getPiece(rank, tempFile) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = rank;
+            let allowedFiles[counter] = tempFile;
+            let counter = counter + 1;
+        }
+
+        let tempRank = rank;
+        let repeat = true;
+        // down loop
+        while(tempRank < 8 & repeat) {
+            let tempRank = tempRank + 1;
+            if(~(board.getPiece(tempRank, file) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = tempRank;
+            let allowedFiles[counter] = file;
+            let counter = counter + 1;
+        }
+
+        let tempFile = file;
+        let repeat = true;
+        // left loop
+        while(tempFile > 97 & repeat) {
+            let tempFile = tempFile - 1;
+            if(~(board.getPiece(rank, tempFile) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = rank;
+            let allowedFiles[counter] = tempFile;
+            let counter = counter + 1;
+        }
+
+        return;
+    }
+
+    method void setQueenMove(Board board, int rank, int file, boolean color) {
+        
+        var int counter, tempRank, tempFile;
+        var Piece piece;
+        var boolean repeat;
+
+        let counter = 0;
+        let tempRank = rank;
+        let tempFile = file;
+        let repeat = true;
+
+        // up left loop
+        while(tempRank > 1 & (tempFile > 97) & repeat) {
+            let tempRank = tempRank - 1;
+            let tempFile = tempFile - 1;
+            if(~(board.getPiece(tempRank, tempFile) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = tempRank;
+            let allowedFiles[counter] = tempFile;
+            let counter = counter + 1;
+        }
+
+        let tempRank = rank;
+        let tempFile = file;
+        let repeat = true;
+        // up right loop
+        while(tempRank > 1 & (tempFile < 104) & repeat) {
+            let tempRank = tempRank - 1;
+            let tempFile = tempFile + 1;
+            if(~(board.getPiece(tempRank, tempFile) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = tempRank;
+            let allowedFiles[counter] = tempFile;
+            let counter = counter + 1;
+        }
+
+        let tempRank = rank;
+        let tempFile = file;
+        let repeat = true;
+        // down right loop
+        while(tempRank < 8 & (tempFile < 104) & repeat) {
+            let tempRank = tempRank + 1;
+            let tempFile = tempFile + 1;
+            if(~(board.getPiece(tempRank, tempFile) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = tempRank;
+            let allowedFiles[counter] = tempFile;
+            let counter = counter + 1;
+        }
+
+        let tempRank = rank;
+        let tempFile = file;
+        let repeat = true;
+        // down left loop
+        while(tempRank < 8 & (tempFile > 97) & repeat) {
+            let tempRank = tempRank + 1;
+            let tempFile = tempFile - 1;
+            if(~(board.getPiece(tempRank, tempFile) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = tempRank;
+            let allowedFiles[counter] = tempFile;
+            let counter = counter + 1;
+        }
+        let tempRank = rank;
+        let repeat = true;
+
+        // up loop
+        while(tempRank > 1 & repeat) {
+            let tempRank = tempRank - 1;
+            if(~(board.getPiece(tempRank, file) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = tempRank;
+            let allowedFiles[counter] = file;
+            let counter = counter + 1;
+        }
+
+        let tempFile = file;
+        let repeat = true;
+        // right loop
+        while(tempFile < 104 & repeat) {
+            let tempFile = tempFile + 1;
+            if(~(board.getPiece(rank, tempFile) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = rank;
+            let allowedFiles[counter] = tempFile;
+            let counter = counter + 1;
+        }
+
+        let tempRank = rank;
+        let repeat = true;
+        // down loop
+        while(tempRank < 8 & repeat) {
+            let tempRank = tempRank + 1;
+            if(~(board.getPiece(tempRank, file) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = tempRank;
+            let allowedFiles[counter] = file;
+            let counter = counter + 1;
+        }
+
+        let tempFile = file;
+        let repeat = true;
+        // left loop
+        while(tempFile > 97 & repeat) {
+            let tempFile = tempFile - 1;
+            if(~(board.getPiece(rank, tempFile) = 0)) {
+                let repeat = false;
+            }
+            let allowedRanks[counter] = rank;
+            let allowedFiles[counter] = tempFile;
+            let counter = counter + 1;
+        }
+
+        return;
+    }
+    method void setKingMove(Board board, int rank, int file, boolean color) {
+        
+        var int counter;
+        var Piece piece;
+
+        let counter = 0;
+
+        // up left
+        if(rank > 1 & (file > 97)) {
+            let allowedRanks[counter] = rank - 1;
+            let allowedFiles[counter] = file - 1;
+            let counter = counter + 1;
+        }
+
+        // up right
+        if(rank > 1 & (file < 104)) {
+            let allowedRanks[counter] = rank - 1;
+            let allowedFiles[counter] = file + 1;
+            let counter = counter + 1;
+        }
+
+        // down right
+        if(rank < 8 & (file < 104)) {
+            let allowedRanks[counter] = rank + 1;
+            let allowedFiles[counter] = file + 1;
+            let counter = counter + 1;
+        }
+
+        // down left
+        if(rank < 8 & (file > 97)) {
+            let allowedRanks[counter] = rank + 1;
+            let allowedFiles[counter] = file - 1;
+            let counter = counter + 1;
+        }
+
+        // up
+        if(rank > 1) {
+            let allowedRanks[counter] = rank - 1;
+            let allowedFiles[counter] = file;
+            let counter = counter + 1;
+        }
+
+        // right
+        if(file < 104) {
+            let allowedRanks[counter] = rank;
+            let allowedFiles[counter] = file + 1;
+            let counter = counter + 1;
+        }
+
+        // down
+        if(rank < 8) {
+            let allowedRanks[counter] = rank + 1;
+            let allowedFiles[counter] = file;
+            let counter = counter + 1;
+        }
+
+        // left
+        if(file > 97) {
+            let allowedRanks[counter] = rank;
+            let allowedFiles[counter] = file - 1;
+            let counter = counter + 1;
+        }
 
         return;
     }

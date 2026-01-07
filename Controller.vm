@@ -30,11 +30,63 @@ label Controller_0
 label Controller_1
     push constant 0
     return
-function Controller.getInput 1
+function Controller.getInput 5
     push argument 0
     pop pointer 0
     call Keyboard.keyPressed 0
     pop local 0
+    push local 1
+    push local 0
+    push constant 132
+    eq
+    not
+    and
+    not
+    if-goto Controller_3
+    push constant 0
+    pop local 1
+    goto Controller_2
+label Controller_3
+label Controller_2
+    push local 2
+    push local 0
+    push constant 130
+    eq
+    not
+    and
+    not
+    if-goto Controller_5
+    push constant 0
+    pop local 2
+    goto Controller_4
+label Controller_5
+label Controller_4
+    push local 3
+    push local 0
+    push constant 131
+    eq
+    not
+    and
+    not
+    if-goto Controller_7
+    push constant 0
+    pop local 3
+    goto Controller_6
+label Controller_7
+label Controller_6
+    push local 4
+    push local 0
+    push constant 133
+    eq
+    not
+    and
+    not
+    if-goto Controller_9
+    push constant 0
+    pop local 4
+    goto Controller_8
+label Controller_9
+label Controller_8
     push local 0
     push constant 48
     gt
@@ -48,7 +100,7 @@ function Controller.getInput 1
     not
     and
     not
-    if-goto Controller_3
+    if-goto Controller_11
     push argument 1
     call Display.drawBoard 1
     pop temp 0
@@ -65,22 +117,22 @@ function Controller.getInput 1
     push constant 0
     gt
     not
-    if-goto Controller_5
+    if-goto Controller_13
     push this 1
     push constant 1
     neg
     call Display.shadeFile 2
     pop temp 0
-    goto Controller_4
-label Controller_5
-label Controller_4
+    goto Controller_12
+label Controller_13
+label Controller_12
     call Display.highlightSelectedSquare 0
     pop temp 0
     call Display.writeMessage 0
     pop temp 0
-    goto Controller_2
-label Controller_3
-label Controller_2
+    goto Controller_10
+label Controller_11
+label Controller_10
     push local 0
     push constant 96
     gt
@@ -94,7 +146,7 @@ label Controller_2
     not
     and
     not
-    if-goto Controller_7
+    if-goto Controller_15
     push argument 1
     call Display.drawBoard 1
     pop temp 0
@@ -109,7 +161,7 @@ label Controller_2
     push constant 0
     gt
     not
-    if-goto Controller_9
+    if-goto Controller_17
     push this 0
     push constant 48
     sub
@@ -117,16 +169,252 @@ label Controller_2
     neg
     call Display.shadeRank 2
     pop temp 0
-    goto Controller_8
-label Controller_9
-label Controller_8
+    goto Controller_16
+label Controller_17
+label Controller_16
     call Display.highlightSelectedSquare 0
     pop temp 0
     call Display.writeMessage 0
     pop temp 0
-    goto Controller_6
-label Controller_7
-label Controller_6
+    goto Controller_14
+label Controller_15
+label Controller_14
+    push local 0
+    push constant 130
+    eq
+    push local 2
+    not
+    and
+    not
+    if-goto Controller_19
+    push constant 1
+    neg
+    pop local 2
+    push this 1
+    push constant 0
+    eq
+    push this 1
+    push constant 97
+    eq
+    or
+    not
+    if-goto Controller_21
+    push constant 104
+    pop this 1
+    goto Controller_20
+label Controller_21
+    push this 1
+    push constant 1
+    sub
+    pop this 1
+label Controller_20
+    push argument 1
+    call Display.drawBoard 1
+    pop temp 0
+    push this 1
+    push constant 1
+    neg
+    call Display.shadeFile 2
+    pop temp 0
+    push this 0
+    push constant 0
+    gt
+    not
+    if-goto Controller_23
+    push this 0
+    push constant 48
+    sub
+    push constant 1
+    neg
+    call Display.shadeRank 2
+    pop temp 0
+    goto Controller_22
+label Controller_23
+label Controller_22
+    call Display.highlightSelectedSquare 0
+    pop temp 0
+    call Display.writeMessage 0
+    pop temp 0
+    goto Controller_18
+label Controller_19
+label Controller_18
+    push local 0
+    push constant 132
+    eq
+    push local 1
+    not
+    and
+    not
+    if-goto Controller_25
+    push constant 1
+    neg
+    pop local 1
+    push this 1
+    push constant 0
+    eq
+    push this 1
+    push constant 104
+    eq
+    or
+    not
+    if-goto Controller_27
+    push constant 97
+    pop this 1
+    goto Controller_26
+label Controller_27
+    push this 1
+    push constant 1
+    add
+    pop this 1
+label Controller_26
+    push argument 1
+    call Display.drawBoard 1
+    pop temp 0
+    push this 1
+    push constant 1
+    neg
+    call Display.shadeFile 2
+    pop temp 0
+    push this 0
+    push constant 0
+    gt
+    not
+    if-goto Controller_29
+    push this 0
+    push constant 48
+    sub
+    push constant 1
+    neg
+    call Display.shadeRank 2
+    pop temp 0
+    goto Controller_28
+label Controller_29
+label Controller_28
+    call Display.highlightSelectedSquare 0
+    pop temp 0
+    call Display.writeMessage 0
+    pop temp 0
+    goto Controller_24
+label Controller_25
+label Controller_24
+    push local 0
+    push constant 131
+    eq
+    push local 3
+    not
+    and
+    not
+    if-goto Controller_31
+    push constant 1
+    neg
+    pop local 3
+    push this 0
+    push constant 0
+    eq
+    push this 0
+    push constant 49
+    eq
+    or
+    not
+    if-goto Controller_33
+    push constant 56
+    pop this 0
+    goto Controller_32
+label Controller_33
+    push this 0
+    push constant 1
+    sub
+    pop this 0
+label Controller_32
+    push argument 1
+    call Display.drawBoard 1
+    pop temp 0
+    push this 0
+    push constant 48
+    sub
+    push constant 1
+    neg
+    call Display.shadeRank 2
+    pop temp 0
+    push this 1
+    push constant 0
+    gt
+    not
+    if-goto Controller_35
+    push this 1
+    push constant 1
+    neg
+    call Display.shadeFile 2
+    pop temp 0
+    goto Controller_34
+label Controller_35
+label Controller_34
+    call Display.highlightSelectedSquare 0
+    pop temp 0
+    call Display.writeMessage 0
+    pop temp 0
+    goto Controller_30
+label Controller_31
+label Controller_30
+    push local 0
+    push constant 133
+    eq
+    push local 4
+    not
+    and
+    not
+    if-goto Controller_37
+    push constant 1
+    neg
+    pop local 4
+    push this 0
+    push constant 0
+    eq
+    push this 0
+    push constant 56
+    eq
+    or
+    not
+    if-goto Controller_39
+    push constant 49
+    pop this 0
+    goto Controller_38
+label Controller_39
+    push this 0
+    push constant 1
+    add
+    pop this 0
+label Controller_38
+    push argument 1
+    call Display.drawBoard 1
+    pop temp 0
+    push this 0
+    push constant 48
+    sub
+    push constant 1
+    neg
+    call Display.shadeRank 2
+    pop temp 0
+    push this 1
+    push constant 0
+    gt
+    not
+    if-goto Controller_41
+    push this 1
+    push constant 1
+    neg
+    call Display.shadeFile 2
+    pop temp 0
+    goto Controller_40
+label Controller_41
+label Controller_40
+    call Display.highlightSelectedSquare 0
+    pop temp 0
+    call Display.writeMessage 0
+    pop temp 0
+    goto Controller_36
+label Controller_37
+label Controller_36
     push local 0
     push constant 128
     eq
@@ -139,27 +427,27 @@ label Controller_6
     gt
     and
     not
-    if-goto Controller_11
+    if-goto Controller_43
     push constant 1
     neg
     return
-    goto Controller_10
-label Controller_11
-label Controller_10
+    goto Controller_42
+label Controller_43
+label Controller_42
     push local 0
     push constant 140
     eq
     not
-    if-goto Controller_13
+    if-goto Controller_45
     push constant 1
     neg
     pop static 0
     push constant 1
     neg
     return
-    goto Controller_12
-label Controller_13
-label Controller_12
+    goto Controller_44
+label Controller_45
+label Controller_44
     push constant 0
     return
 function Controller.getRankInput 0
@@ -194,12 +482,12 @@ function Controller.selectPiece 1
     push static 1
     eq
     not
-    if-goto Controller_15
+    if-goto Controller_47
     push local 0
     return
-    goto Controller_14
-label Controller_15
-label Controller_14
+    goto Controller_46
+label Controller_47
+label Controller_46
     push constant 0
     return
 function Controller.getTurn 0
@@ -245,8 +533,19 @@ function Controller.movePiece 5
     push local 2
     push local 3
     call Controller.moveIsAllowed 3
+    push argument 2
+    call Piece.getColor 1
+    push local 4
+    call Piece.getColor 1
+    eq
     not
-    if-goto Controller_17
+    push local 4
+    push constant 0
+    eq
+    or
+    and
+    not
+    if-goto Controller_49
     push argument 1
     push constant 0
     push local 0
@@ -263,13 +562,13 @@ function Controller.movePiece 5
     push constant 0
     gt
     not
-    if-goto Controller_19
+    if-goto Controller_51
     push local 4
     call Piece.capture 1
     pop temp 0
-    goto Controller_18
-label Controller_19
-label Controller_18
+    goto Controller_50
+label Controller_51
+label Controller_50
     push argument 2
     push local 2
     call Piece.setRank 2
@@ -283,24 +582,24 @@ label Controller_18
     pop static 1
     push constant 0
     return
-    goto Controller_16
-label Controller_17
-label Controller_16
+    goto Controller_48
+label Controller_49
+label Controller_48
     push constant 1
     neg
     return
-function Controller.setAllowedMoves 6
+function Controller.setAllowedMoves 5
     push argument 0
     pop pointer 0
     push constant 0
-    pop local 2
-label Controller_20
-    push local 2
+    pop local 1
+label Controller_52
+    push local 1
     push constant 27
     lt
     not
-    if-goto Controller_21
-    push local 2
+    if-goto Controller_53
+    push local 1
     push this 2
     add
     push constant 0
@@ -308,7 +607,7 @@ label Controller_20
     pop pointer 1
     push temp 0
     pop that 0
-    push local 2
+    push local 1
     push this 3
     add
     push constant 0
@@ -316,44 +615,116 @@ label Controller_20
     pop pointer 1
     push temp 0
     pop that 0
-    push local 2
+    push local 1
     push constant 1
     add
-    pop local 2
-    goto Controller_20
-label Controller_21
-    push constant 1
-    neg
-    pop local 0
+    pop local 1
+    goto Controller_52
+label Controller_53
     push constant 0
-    pop local 2
-    push argument 2
-    call Piece.getType 1
-    pop local 3
-    push argument 2
-    call Piece.getColor 1
     pop local 1
     push argument 2
+    call Piece.getType 1
+    pop local 2
+    push argument 2
+    call Piece.getColor 1
+    pop local 0
+    push argument 2
     call Piece.getRank 1
-    pop local 4
+    pop local 3
     push argument 2
     call Piece.getFile 1
-    pop local 5
-    push local 3
+    pop local 4
+    push local 2
     push constant 0
     eq
     not
-    if-goto Controller_23
+    if-goto Controller_55
     push pointer 0
     push argument 1
+    push local 3
     push local 4
-    push local 5
-    push local 1
+    push local 0
     call Controller.setPawnMove 5
     pop temp 0
-    goto Controller_22
-label Controller_23
-label Controller_22
+    goto Controller_54
+label Controller_55
+label Controller_54
+    push local 2
+    push constant 1
+    eq
+    not
+    if-goto Controller_57
+    push pointer 0
+    push argument 1
+    push local 3
+    push local 4
+    push local 0
+    call Controller.setKnightMove 5
+    pop temp 0
+    goto Controller_56
+label Controller_57
+label Controller_56
+    push local 2
+    push constant 2
+    eq
+    not
+    if-goto Controller_59
+    push pointer 0
+    push argument 1
+    push local 3
+    push local 4
+    push local 0
+    call Controller.setBishopMove 5
+    pop temp 0
+    goto Controller_58
+label Controller_59
+label Controller_58
+    push local 2
+    push constant 3
+    eq
+    not
+    if-goto Controller_61
+    push pointer 0
+    push argument 1
+    push local 3
+    push local 4
+    push local 0
+    call Controller.setRookMove 5
+    pop temp 0
+    goto Controller_60
+label Controller_61
+label Controller_60
+    push local 2
+    push constant 4
+    eq
+    not
+    if-goto Controller_63
+    push pointer 0
+    push argument 1
+    push local 3
+    push local 4
+    push local 0
+    call Controller.setQueenMove 5
+    pop temp 0
+    goto Controller_62
+label Controller_63
+label Controller_62
+    push local 2
+    push constant 5
+    eq
+    not
+    if-goto Controller_65
+    push pointer 0
+    push argument 1
+    push local 3
+    push local 4
+    push local 0
+    call Controller.setKingMove 5
+    pop temp 0
+    goto Controller_64
+label Controller_65
+label Controller_64
     push constant 0
     return
 function Controller.setPawnMove 2
@@ -363,12 +734,12 @@ function Controller.setPawnMove 2
     pop local 0
     push argument 4
     not
-    if-goto Controller_25
+    if-goto Controller_67
     push argument 3
     push constant 97
     gt
     not
-    if-goto Controller_27
+    if-goto Controller_69
     push argument 1
     push argument 2
     push constant 1
@@ -381,12 +752,8 @@ function Controller.setPawnMove 2
     push local 1
     push constant 0
     gt
-    push local 1
-    call Piece.getColor 1
     not
-    and
-    not
-    if-goto Controller_29
+    if-goto Controller_71
     push local 0
     push this 2
     add
@@ -411,17 +778,17 @@ function Controller.setPawnMove 2
     push constant 1
     add
     pop local 0
-    goto Controller_28
-label Controller_29
-label Controller_28
-    goto Controller_26
-label Controller_27
-label Controller_26
+    goto Controller_70
+label Controller_71
+label Controller_70
+    goto Controller_68
+label Controller_69
+label Controller_68
     push argument 3
     push constant 104
     lt
     not
-    if-goto Controller_31
+    if-goto Controller_73
     push argument 1
     push argument 2
     push constant 1
@@ -435,7 +802,7 @@ label Controller_26
     push constant 0
     gt
     not
-    if-goto Controller_33
+    if-goto Controller_75
     push local 0
     push this 2
     add
@@ -460,17 +827,17 @@ label Controller_26
     push constant 1
     add
     pop local 0
-    goto Controller_32
-label Controller_33
-label Controller_32
-    goto Controller_30
-label Controller_31
-label Controller_30
+    goto Controller_74
+label Controller_75
+label Controller_74
+    goto Controller_72
+label Controller_73
+label Controller_72
     push argument 2
     push constant 8
     lt
     not
-    if-goto Controller_35
+    if-goto Controller_77
     push argument 1
     push argument 2
     push constant 1
@@ -482,7 +849,7 @@ label Controller_30
     push constant 0
     eq
     not
-    if-goto Controller_37
+    if-goto Controller_79
     push local 0
     push this 2
     add
@@ -505,17 +872,17 @@ label Controller_30
     push constant 1
     add
     pop local 0
-    goto Controller_36
-label Controller_37
-label Controller_36
-    goto Controller_34
-label Controller_35
-label Controller_34
+    goto Controller_78
+label Controller_79
+label Controller_78
+    goto Controller_76
+label Controller_77
+label Controller_76
     push argument 2
     push constant 2
     eq
     not
-    if-goto Controller_39
+    if-goto Controller_81
     push argument 1
     push argument 2
     push constant 2
@@ -527,7 +894,7 @@ label Controller_34
     push constant 0
     eq
     not
-    if-goto Controller_41
+    if-goto Controller_83
     push local 0
     push this 2
     add
@@ -550,19 +917,19 @@ label Controller_34
     push constant 1
     add
     pop local 0
-    goto Controller_40
-label Controller_41
-label Controller_40
-    goto Controller_38
-label Controller_39
-label Controller_38
-    goto Controller_24
-label Controller_25
+    goto Controller_82
+label Controller_83
+label Controller_82
+    goto Controller_80
+label Controller_81
+label Controller_80
+    goto Controller_66
+label Controller_67
     push argument 3
     push constant 97
     gt
     not
-    if-goto Controller_43
+    if-goto Controller_85
     push argument 1
     push argument 2
     push constant 1
@@ -575,12 +942,8 @@ label Controller_25
     push local 1
     push constant 0
     gt
-    push local 1
-    call Piece.getColor 1
     not
-    and
-    not
-    if-goto Controller_45
+    if-goto Controller_87
     push local 0
     push this 3
     add
@@ -621,17 +984,17 @@ label Controller_25
     push constant 1
     add
     pop local 0
-    goto Controller_44
-label Controller_45
-label Controller_44
-    goto Controller_42
-label Controller_43
-label Controller_42
+    goto Controller_86
+label Controller_87
+label Controller_86
+    goto Controller_84
+label Controller_85
+label Controller_84
     push argument 3
     push constant 104
     lt
     not
-    if-goto Controller_47
+    if-goto Controller_89
     push argument 1
     push argument 2
     push constant 1
@@ -645,7 +1008,7 @@ label Controller_42
     push constant 0
     gt
     not
-    if-goto Controller_49
+    if-goto Controller_91
     push local 0
     push this 2
     add
@@ -670,17 +1033,17 @@ label Controller_42
     push constant 1
     add
     pop local 0
-    goto Controller_48
-label Controller_49
-label Controller_48
-    goto Controller_46
-label Controller_47
-label Controller_46
+    goto Controller_90
+label Controller_91
+label Controller_90
+    goto Controller_88
+label Controller_89
+label Controller_88
     push argument 2
     push constant 1
     gt
     not
-    if-goto Controller_51
+    if-goto Controller_93
     push argument 1
     push argument 2
     push constant 1
@@ -692,7 +1055,7 @@ label Controller_46
     push constant 0
     eq
     not
-    if-goto Controller_53
+    if-goto Controller_95
     push local 0
     push this 2
     add
@@ -715,17 +1078,17 @@ label Controller_46
     push constant 1
     add
     pop local 0
-    goto Controller_52
-label Controller_53
-label Controller_52
-    goto Controller_50
-label Controller_51
-label Controller_50
+    goto Controller_94
+label Controller_95
+label Controller_94
+    goto Controller_92
+label Controller_93
+label Controller_92
     push argument 2
     push constant 7
     eq
     not
-    if-goto Controller_55
+    if-goto Controller_97
     push argument 1
     push argument 2
     push constant 2
@@ -737,7 +1100,7 @@ label Controller_50
     push constant 0
     eq
     not
-    if-goto Controller_57
+    if-goto Controller_99
     push local 0
     push this 2
     add
@@ -760,13 +1123,1528 @@ label Controller_50
     push constant 1
     add
     pop local 0
-    goto Controller_56
-label Controller_57
-label Controller_56
-    goto Controller_54
-label Controller_55
-label Controller_54
-label Controller_24
+    goto Controller_98
+label Controller_99
+label Controller_98
+    goto Controller_96
+label Controller_97
+label Controller_96
+label Controller_66
+    push constant 0
+    return
+function Controller.setKnightMove 2
+    push argument 0
+    pop pointer 0
+    push constant 0
+    pop local 0
+    push argument 2
+    push constant 2
+    gt
+    push argument 3
+    push constant 97
+    gt
+    and
+    not
+    if-goto Controller_101
+    push local 0
+    push this 2
+    add
+    push argument 2
+    push constant 2
+    sub
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    push constant 1
+    sub
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_100
+label Controller_101
+label Controller_100
+    push argument 2
+    push constant 2
+    gt
+    push argument 3
+    push constant 104
+    lt
+    and
+    not
+    if-goto Controller_103
+    push local 0
+    push this 2
+    add
+    push argument 2
+    push constant 2
+    sub
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    push constant 1
+    add
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_102
+label Controller_103
+label Controller_102
+    push argument 2
+    push constant 1
+    gt
+    push argument 3
+    push constant 98
+    gt
+    and
+    not
+    if-goto Controller_105
+    push local 0
+    push this 2
+    add
+    push argument 2
+    push constant 1
+    sub
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    push constant 2
+    sub
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_104
+label Controller_105
+label Controller_104
+    push argument 2
+    push constant 1
+    gt
+    push argument 3
+    push constant 103
+    lt
+    and
+    not
+    if-goto Controller_107
+    push local 0
+    push this 2
+    add
+    push argument 2
+    push constant 1
+    sub
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    push constant 2
+    add
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_106
+label Controller_107
+label Controller_106
+    push argument 2
+    push constant 7
+    lt
+    push argument 3
+    push constant 97
+    gt
+    and
+    not
+    if-goto Controller_109
+    push local 0
+    push this 2
+    add
+    push argument 2
+    push constant 2
+    add
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    push constant 1
+    sub
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_108
+label Controller_109
+label Controller_108
+    push argument 2
+    push constant 7
+    lt
+    push argument 3
+    push constant 104
+    lt
+    and
+    not
+    if-goto Controller_111
+    push local 0
+    push this 2
+    add
+    push argument 2
+    push constant 2
+    add
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    push constant 1
+    add
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_110
+label Controller_111
+label Controller_110
+    push argument 2
+    push constant 8
+    lt
+    push argument 3
+    push constant 98
+    gt
+    and
+    not
+    if-goto Controller_113
+    push local 0
+    push this 2
+    add
+    push argument 2
+    push constant 1
+    add
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    push constant 2
+    sub
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_112
+label Controller_113
+label Controller_112
+    push argument 2
+    push constant 8
+    lt
+    push argument 3
+    push constant 103
+    lt
+    and
+    not
+    if-goto Controller_115
+    push local 0
+    push this 2
+    add
+    push argument 2
+    push constant 1
+    add
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    push constant 2
+    add
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_114
+label Controller_115
+label Controller_114
+    push constant 0
+    return
+function Controller.setBishopMove 5
+    push argument 0
+    pop pointer 0
+    push constant 0
+    pop local 0
+    push argument 2
+    pop local 1
+    push argument 3
+    pop local 2
+    push constant 1
+    neg
+    pop local 4
+label Controller_116
+    push local 1
+    push constant 1
+    gt
+    push local 2
+    push constant 97
+    gt
+    and
+    push local 4
+    and
+    not
+    if-goto Controller_117
+    push local 1
+    push constant 1
+    sub
+    pop local 1
+    push local 2
+    push constant 1
+    sub
+    pop local 2
+    push argument 1
+    push local 1
+    push local 2
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_119
+    push constant 0
+    pop local 4
+    goto Controller_118
+label Controller_119
+label Controller_118
+    push local 0
+    push this 2
+    add
+    push local 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push local 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_116
+label Controller_117
+    push argument 2
+    pop local 1
+    push argument 3
+    pop local 2
+    push constant 1
+    neg
+    pop local 4
+label Controller_120
+    push local 1
+    push constant 1
+    gt
+    push local 2
+    push constant 104
+    lt
+    and
+    push local 4
+    and
+    not
+    if-goto Controller_121
+    push local 1
+    push constant 1
+    sub
+    pop local 1
+    push local 2
+    push constant 1
+    add
+    pop local 2
+    push argument 1
+    push local 1
+    push local 2
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_123
+    push constant 0
+    pop local 4
+    goto Controller_122
+label Controller_123
+label Controller_122
+    push local 0
+    push this 2
+    add
+    push local 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push local 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_120
+label Controller_121
+    push argument 2
+    pop local 1
+    push argument 3
+    pop local 2
+    push constant 1
+    neg
+    pop local 4
+label Controller_124
+    push local 1
+    push constant 8
+    lt
+    push local 2
+    push constant 104
+    lt
+    and
+    push local 4
+    and
+    not
+    if-goto Controller_125
+    push local 1
+    push constant 1
+    add
+    pop local 1
+    push local 2
+    push constant 1
+    add
+    pop local 2
+    push argument 1
+    push local 1
+    push local 2
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_127
+    push constant 0
+    pop local 4
+    goto Controller_126
+label Controller_127
+label Controller_126
+    push local 0
+    push this 2
+    add
+    push local 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push local 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_124
+label Controller_125
+    push argument 2
+    pop local 1
+    push argument 3
+    pop local 2
+    push constant 1
+    neg
+    pop local 4
+label Controller_128
+    push local 1
+    push constant 8
+    lt
+    push local 2
+    push constant 97
+    gt
+    and
+    push local 4
+    and
+    not
+    if-goto Controller_129
+    push local 1
+    push constant 1
+    add
+    pop local 1
+    push local 2
+    push constant 1
+    sub
+    pop local 2
+    push argument 1
+    push local 1
+    push local 2
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_131
+    push constant 0
+    pop local 4
+    goto Controller_130
+label Controller_131
+label Controller_130
+    push local 0
+    push this 2
+    add
+    push local 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push local 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_128
+label Controller_129
+    push constant 0
+    return
+function Controller.setRookMove 5
+    push argument 0
+    pop pointer 0
+    push constant 0
+    pop local 0
+    push argument 2
+    pop local 1
+    push constant 1
+    neg
+    pop local 4
+label Controller_132
+    push local 1
+    push constant 1
+    gt
+    push local 4
+    and
+    not
+    if-goto Controller_133
+    push local 1
+    push constant 1
+    sub
+    pop local 1
+    push argument 1
+    push local 1
+    push argument 3
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_135
+    push constant 0
+    pop local 4
+    goto Controller_134
+label Controller_135
+label Controller_134
+    push local 0
+    push this 2
+    add
+    push local 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_132
+label Controller_133
+    push argument 3
+    pop local 2
+    push constant 1
+    neg
+    pop local 4
+label Controller_136
+    push local 2
+    push constant 104
+    lt
+    push local 4
+    and
+    not
+    if-goto Controller_137
+    push local 2
+    push constant 1
+    add
+    pop local 2
+    push argument 1
+    push argument 2
+    push local 2
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_139
+    push constant 0
+    pop local 4
+    goto Controller_138
+label Controller_139
+label Controller_138
+    push local 0
+    push this 2
+    add
+    push argument 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push local 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_136
+label Controller_137
+    push argument 2
+    pop local 1
+    push constant 1
+    neg
+    pop local 4
+label Controller_140
+    push local 1
+    push constant 8
+    lt
+    push local 4
+    and
+    not
+    if-goto Controller_141
+    push local 1
+    push constant 1
+    add
+    pop local 1
+    push argument 1
+    push local 1
+    push argument 3
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_143
+    push constant 0
+    pop local 4
+    goto Controller_142
+label Controller_143
+label Controller_142
+    push local 0
+    push this 2
+    add
+    push local 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_140
+label Controller_141
+    push argument 3
+    pop local 2
+    push constant 1
+    neg
+    pop local 4
+label Controller_144
+    push local 2
+    push constant 97
+    gt
+    push local 4
+    and
+    not
+    if-goto Controller_145
+    push local 2
+    push constant 1
+    sub
+    pop local 2
+    push argument 1
+    push argument 2
+    push local 2
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_147
+    push constant 0
+    pop local 4
+    goto Controller_146
+label Controller_147
+label Controller_146
+    push local 0
+    push this 2
+    add
+    push argument 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push local 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_144
+label Controller_145
+    push constant 0
+    return
+function Controller.setQueenMove 5
+    push argument 0
+    pop pointer 0
+    push constant 0
+    pop local 0
+    push argument 2
+    pop local 1
+    push argument 3
+    pop local 2
+    push constant 1
+    neg
+    pop local 4
+label Controller_148
+    push local 1
+    push constant 1
+    gt
+    push local 2
+    push constant 97
+    gt
+    and
+    push local 4
+    and
+    not
+    if-goto Controller_149
+    push local 1
+    push constant 1
+    sub
+    pop local 1
+    push local 2
+    push constant 1
+    sub
+    pop local 2
+    push argument 1
+    push local 1
+    push local 2
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_151
+    push constant 0
+    pop local 4
+    goto Controller_150
+label Controller_151
+label Controller_150
+    push local 0
+    push this 2
+    add
+    push local 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push local 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_148
+label Controller_149
+    push argument 2
+    pop local 1
+    push argument 3
+    pop local 2
+    push constant 1
+    neg
+    pop local 4
+label Controller_152
+    push local 1
+    push constant 1
+    gt
+    push local 2
+    push constant 104
+    lt
+    and
+    push local 4
+    and
+    not
+    if-goto Controller_153
+    push local 1
+    push constant 1
+    sub
+    pop local 1
+    push local 2
+    push constant 1
+    add
+    pop local 2
+    push argument 1
+    push local 1
+    push local 2
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_155
+    push constant 0
+    pop local 4
+    goto Controller_154
+label Controller_155
+label Controller_154
+    push local 0
+    push this 2
+    add
+    push local 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push local 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_152
+label Controller_153
+    push argument 2
+    pop local 1
+    push argument 3
+    pop local 2
+    push constant 1
+    neg
+    pop local 4
+label Controller_156
+    push local 1
+    push constant 8
+    lt
+    push local 2
+    push constant 104
+    lt
+    and
+    push local 4
+    and
+    not
+    if-goto Controller_157
+    push local 1
+    push constant 1
+    add
+    pop local 1
+    push local 2
+    push constant 1
+    add
+    pop local 2
+    push argument 1
+    push local 1
+    push local 2
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_159
+    push constant 0
+    pop local 4
+    goto Controller_158
+label Controller_159
+label Controller_158
+    push local 0
+    push this 2
+    add
+    push local 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push local 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_156
+label Controller_157
+    push argument 2
+    pop local 1
+    push argument 3
+    pop local 2
+    push constant 1
+    neg
+    pop local 4
+label Controller_160
+    push local 1
+    push constant 8
+    lt
+    push local 2
+    push constant 97
+    gt
+    and
+    push local 4
+    and
+    not
+    if-goto Controller_161
+    push local 1
+    push constant 1
+    add
+    pop local 1
+    push local 2
+    push constant 1
+    sub
+    pop local 2
+    push argument 1
+    push local 1
+    push local 2
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_163
+    push constant 0
+    pop local 4
+    goto Controller_162
+label Controller_163
+label Controller_162
+    push local 0
+    push this 2
+    add
+    push local 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push local 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_160
+label Controller_161
+    push argument 2
+    pop local 1
+    push constant 1
+    neg
+    pop local 4
+label Controller_164
+    push local 1
+    push constant 1
+    gt
+    push local 4
+    and
+    not
+    if-goto Controller_165
+    push local 1
+    push constant 1
+    sub
+    pop local 1
+    push argument 1
+    push local 1
+    push argument 3
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_167
+    push constant 0
+    pop local 4
+    goto Controller_166
+label Controller_167
+label Controller_166
+    push local 0
+    push this 2
+    add
+    push local 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_164
+label Controller_165
+    push argument 3
+    pop local 2
+    push constant 1
+    neg
+    pop local 4
+label Controller_168
+    push local 2
+    push constant 104
+    lt
+    push local 4
+    and
+    not
+    if-goto Controller_169
+    push local 2
+    push constant 1
+    add
+    pop local 2
+    push argument 1
+    push argument 2
+    push local 2
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_171
+    push constant 0
+    pop local 4
+    goto Controller_170
+label Controller_171
+label Controller_170
+    push local 0
+    push this 2
+    add
+    push argument 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push local 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_168
+label Controller_169
+    push argument 2
+    pop local 1
+    push constant 1
+    neg
+    pop local 4
+label Controller_172
+    push local 1
+    push constant 8
+    lt
+    push local 4
+    and
+    not
+    if-goto Controller_173
+    push local 1
+    push constant 1
+    add
+    pop local 1
+    push argument 1
+    push local 1
+    push argument 3
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_175
+    push constant 0
+    pop local 4
+    goto Controller_174
+label Controller_175
+label Controller_174
+    push local 0
+    push this 2
+    add
+    push local 1
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_172
+label Controller_173
+    push argument 3
+    pop local 2
+    push constant 1
+    neg
+    pop local 4
+label Controller_176
+    push local 2
+    push constant 97
+    gt
+    push local 4
+    and
+    not
+    if-goto Controller_177
+    push local 2
+    push constant 1
+    sub
+    pop local 2
+    push argument 1
+    push argument 2
+    push local 2
+    call Board.getPiece 3
+    push constant 0
+    eq
+    not
+    not
+    if-goto Controller_179
+    push constant 0
+    pop local 4
+    goto Controller_178
+label Controller_179
+label Controller_178
+    push local 0
+    push this 2
+    add
+    push argument 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push local 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_176
+label Controller_177
+    push constant 0
+    return
+function Controller.setKingMove 2
+    push argument 0
+    pop pointer 0
+    push constant 0
+    pop local 0
+    push argument 2
+    push constant 1
+    gt
+    push argument 3
+    push constant 97
+    gt
+    and
+    not
+    if-goto Controller_181
+    push local 0
+    push this 2
+    add
+    push argument 2
+    push constant 1
+    sub
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    push constant 1
+    sub
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_180
+label Controller_181
+label Controller_180
+    push argument 2
+    push constant 1
+    gt
+    push argument 3
+    push constant 104
+    lt
+    and
+    not
+    if-goto Controller_183
+    push local 0
+    push this 2
+    add
+    push argument 2
+    push constant 1
+    sub
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    push constant 1
+    add
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_182
+label Controller_183
+label Controller_182
+    push argument 2
+    push constant 8
+    lt
+    push argument 3
+    push constant 104
+    lt
+    and
+    not
+    if-goto Controller_185
+    push local 0
+    push this 2
+    add
+    push argument 2
+    push constant 1
+    add
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    push constant 1
+    add
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_184
+label Controller_185
+label Controller_184
+    push argument 2
+    push constant 8
+    lt
+    push argument 3
+    push constant 97
+    gt
+    and
+    not
+    if-goto Controller_187
+    push local 0
+    push this 2
+    add
+    push argument 2
+    push constant 1
+    add
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    push constant 1
+    sub
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_186
+label Controller_187
+label Controller_186
+    push argument 2
+    push constant 1
+    gt
+    not
+    if-goto Controller_189
+    push local 0
+    push this 2
+    add
+    push argument 2
+    push constant 1
+    sub
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_188
+label Controller_189
+label Controller_188
+    push argument 3
+    push constant 104
+    lt
+    not
+    if-goto Controller_191
+    push local 0
+    push this 2
+    add
+    push argument 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    push constant 1
+    add
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_190
+label Controller_191
+label Controller_190
+    push argument 2
+    push constant 8
+    lt
+    not
+    if-goto Controller_193
+    push local 0
+    push this 2
+    add
+    push argument 2
+    push constant 1
+    add
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_192
+label Controller_193
+label Controller_192
+    push argument 3
+    push constant 97
+    gt
+    not
+    if-goto Controller_195
+    push local 0
+    push this 2
+    add
+    push argument 2
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push this 3
+    add
+    push argument 3
+    push constant 1
+    sub
+    pop temp 0
+    pop pointer 1
+    push temp 0
+    pop that 0
+    push local 0
+    push constant 1
+    add
+    pop local 0
+    goto Controller_194
+label Controller_195
+label Controller_194
     push constant 0
     return
 function Controller.moveIsAllowed 1
@@ -782,12 +2660,12 @@ function Controller.moveIsAllowed 1
     pop temp 0
     call Output.println 0
     pop temp 0
-label Controller_58
+label Controller_196
     push local 0
     push constant 27
     lt
     not
-    if-goto Controller_59
+    if-goto Controller_197
     push local 0
     push this 2
     add
@@ -804,18 +2682,18 @@ label Controller_58
     eq
     and
     not
-    if-goto Controller_61
+    if-goto Controller_199
     push constant 1
     neg
     return
-    goto Controller_60
-label Controller_61
-label Controller_60
+    goto Controller_198
+label Controller_199
+label Controller_198
     push local 0
     push constant 1
     add
     pop local 0
-    goto Controller_58
-label Controller_59
+    goto Controller_196
+label Controller_197
     push constant 0
     return

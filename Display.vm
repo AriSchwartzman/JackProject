@@ -1,6 +1,146 @@
-function Display.setMessageLength 0
-    push argument 0
+function Display.setMessages 0
+    push constant 12
+    call String.new 1
+    push constant 87
+    call String.appendChar 2
+    push constant 104
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 116
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 39
+    call String.appendChar 2
+    push constant 115
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    push constant 84
+    call String.appendChar 2
+    push constant 117
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 110
+    call String.appendChar 2
     pop static 1
+    push constant 12
+    call String.new 1
+    push constant 66
+    call String.appendChar 2
+    push constant 108
+    call String.appendChar 2
+    push constant 97
+    call String.appendChar 2
+    push constant 99
+    call String.appendChar 2
+    push constant 107
+    call String.appendChar 2
+    push constant 39
+    call String.appendChar 2
+    push constant 115
+    call String.appendChar 2
+    push constant 32
+    call String.appendChar 2
+    push constant 84
+    call String.appendChar 2
+    push constant 117
+    call String.appendChar 2
+    push constant 114
+    call String.appendChar 2
+    push constant 110
+    call String.appendChar 2
+    pop static 2
+    push constant 5
+    call String.new 1
+    push constant 32
+    call String.appendChar 2
+    push constant 80
+    call String.appendChar 2
+    push constant 97
+    call String.appendChar 2
+    push constant 119
+    call String.appendChar 2
+    push constant 110
+    call String.appendChar 2
+    pop static 3
+    push constant 7
+    call String.new 1
+    push constant 32
+    call String.appendChar 2
+    push constant 75
+    call String.appendChar 2
+    push constant 110
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 103
+    call String.appendChar 2
+    push constant 104
+    call String.appendChar 2
+    push constant 116
+    call String.appendChar 2
+    pop static 4
+    push constant 7
+    call String.new 1
+    push constant 32
+    call String.appendChar 2
+    push constant 66
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 115
+    call String.appendChar 2
+    push constant 104
+    call String.appendChar 2
+    push constant 111
+    call String.appendChar 2
+    push constant 112
+    call String.appendChar 2
+    pop static 5
+    push constant 5
+    call String.new 1
+    push constant 32
+    call String.appendChar 2
+    push constant 82
+    call String.appendChar 2
+    push constant 111
+    call String.appendChar 2
+    push constant 111
+    call String.appendChar 2
+    push constant 107
+    call String.appendChar 2
+    pop static 6
+    push constant 6
+    call String.new 1
+    push constant 32
+    call String.appendChar 2
+    push constant 81
+    call String.appendChar 2
+    push constant 117
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 101
+    call String.appendChar 2
+    push constant 110
+    call String.appendChar 2
+    pop static 7
+    push constant 5
+    call String.new 1
+    push constant 32
+    call String.appendChar 2
+    push constant 75
+    call String.appendChar 2
+    push constant 105
+    call String.appendChar 2
+    push constant 110
+    call String.appendChar 2
+    push constant 103
+    call String.appendChar 2
+    pop static 8
     push constant 0
     return
 function Display.drawPiece 8
@@ -400,89 +540,29 @@ label Display_9
     push constant 0
     return
 function Display.writeMessage 0
-label Display_18
-    push static 1
     push constant 0
-    gt
-    not
-    if-goto Display_19
-    call Output.backSpace 0
+    push constant 0
+    call Output.moveCursor 2
     pop temp 0
-    push static 1
-    push constant 1
-    sub
-    pop static 1
-    goto Display_18
-label Display_19
     call Controller.getTurn 0
     not
-    if-goto Display_21
-    push constant 12
-    call String.new 1
-    push constant 66
-    call String.appendChar 2
-    push constant 108
-    call String.appendChar 2
-    push constant 97
-    call String.appendChar 2
-    push constant 99
-    call String.appendChar 2
-    push constant 107
-    call String.appendChar 2
-    push constant 39
-    call String.appendChar 2
-    push constant 115
-    call String.appendChar 2
-    push constant 32
-    call String.appendChar 2
-    push constant 84
-    call String.appendChar 2
-    push constant 117
-    call String.appendChar 2
-    push constant 114
-    call String.appendChar 2
-    push constant 110
-    call String.appendChar 2
+    if-goto Display_19
+    push static 2
     call Output.printString 1
     pop temp 0
-    goto Display_20
-label Display_21
-    push constant 12
-    call String.new 1
-    push constant 87
-    call String.appendChar 2
-    push constant 104
-    call String.appendChar 2
-    push constant 105
-    call String.appendChar 2
-    push constant 116
-    call String.appendChar 2
-    push constant 101
-    call String.appendChar 2
-    push constant 39
-    call String.appendChar 2
-    push constant 115
-    call String.appendChar 2
-    push constant 32
-    call String.appendChar 2
-    push constant 84
-    call String.appendChar 2
-    push constant 117
-    call String.appendChar 2
-    push constant 114
-    call String.appendChar 2
-    push constant 110
-    call String.appendChar 2
+    goto Display_18
+label Display_19
+    push static 1
     call Output.printString 1
     pop temp 0
-label Display_20
+label Display_18
     call Output.println 0
     pop temp 0
     push static 0
     push constant 0
     gt
     not
-    if-goto Display_23
+    if-goto Display_21
     push static 0
     call Piece.getFile 1
     push constant 32
@@ -498,189 +578,97 @@ label Display_20
     push constant 0
     eq
     not
-    if-goto Display_25
-    push constant 5
-    call String.new 1
-    push constant 32
-    call String.appendChar 2
-    push constant 80
-    call String.appendChar 2
-    push constant 97
-    call String.appendChar 2
-    push constant 119
-    call String.appendChar 2
-    push constant 110
-    call String.appendChar 2
+    if-goto Display_23
+    push static 3
     call Output.printString 1
     pop temp 0
-    push constant 20
-    pop static 1
+    goto Display_22
+label Display_23
+label Display_22
+    push static 0
+    call Piece.getType 1
+    push constant 1
+    eq
+    not
+    if-goto Display_25
+    push static 4
+    call Output.printString 1
+    pop temp 0
     goto Display_24
 label Display_25
 label Display_24
     push static 0
     call Piece.getType 1
-    push constant 1
+    push constant 2
     eq
     not
     if-goto Display_27
-    push constant 7
-    call String.new 1
-    push constant 32
-    call String.appendChar 2
-    push constant 75
-    call String.appendChar 2
-    push constant 110
-    call String.appendChar 2
-    push constant 105
-    call String.appendChar 2
-    push constant 103
-    call String.appendChar 2
-    push constant 104
-    call String.appendChar 2
-    push constant 116
-    call String.appendChar 2
+    push static 5
     call Output.printString 1
     pop temp 0
-    push constant 22
-    pop static 1
     goto Display_26
 label Display_27
 label Display_26
     push static 0
     call Piece.getType 1
-    push constant 2
+    push constant 3
     eq
     not
     if-goto Display_29
-    push constant 7
-    call String.new 1
-    push constant 32
-    call String.appendChar 2
-    push constant 66
-    call String.appendChar 2
-    push constant 105
-    call String.appendChar 2
-    push constant 115
-    call String.appendChar 2
-    push constant 104
-    call String.appendChar 2
-    push constant 111
-    call String.appendChar 2
-    push constant 112
-    call String.appendChar 2
+    push static 6
     call Output.printString 1
     pop temp 0
-    push constant 22
-    pop static 1
     goto Display_28
 label Display_29
 label Display_28
     push static 0
     call Piece.getType 1
-    push constant 3
+    push constant 4
     eq
     not
     if-goto Display_31
-    push constant 5
-    call String.new 1
-    push constant 32
-    call String.appendChar 2
-    push constant 82
-    call String.appendChar 2
-    push constant 111
-    call String.appendChar 2
-    push constant 111
-    call String.appendChar 2
-    push constant 107
-    call String.appendChar 2
+    push static 7
     call Output.printString 1
     pop temp 0
-    push constant 20
-    pop static 1
     goto Display_30
 label Display_31
 label Display_30
     push static 0
     call Piece.getType 1
-    push constant 4
+    push constant 5
     eq
     not
     if-goto Display_33
-    push constant 6
-    call String.new 1
-    push constant 32
-    call String.appendChar 2
-    push constant 81
-    call String.appendChar 2
-    push constant 117
-    call String.appendChar 2
-    push constant 101
-    call String.appendChar 2
-    push constant 101
-    call String.appendChar 2
-    push constant 110
-    call String.appendChar 2
+    push static 8
     call Output.printString 1
     pop temp 0
-    push constant 21
-    pop static 1
     goto Display_32
 label Display_33
 label Display_32
-    push static 0
-    call Piece.getType 1
-    push constant 5
-    eq
-    not
-    if-goto Display_35
-    push constant 5
-    call String.new 1
-    push constant 32
-    call String.appendChar 2
-    push constant 75
-    call String.appendChar 2
-    push constant 105
-    call String.appendChar 2
-    push constant 110
-    call String.appendChar 2
-    push constant 103
-    call String.appendChar 2
-    call Output.printString 1
-    pop temp 0
-    push constant 20
-    pop static 1
-    goto Display_34
-label Display_35
-label Display_34
-    goto Display_22
-label Display_23
-    push constant 13
-    pop static 1
-label Display_22
+    goto Display_20
+label Display_21
+label Display_20
     push constant 0
     return
 function Display.drawBoard 4
     call Screen.clearScreen 0
     pop temp 0
-    call Display.writeMessage 0
-    pop temp 0
     push constant 1
     pop local 1
-label Display_36
+label Display_34
     push local 1
     push constant 9
     lt
     not
-    if-goto Display_37
+    if-goto Display_35
     push constant 97
     pop local 2
-label Display_38
+label Display_36
     push local 2
     push constant 105
     lt
     not
-    if-goto Display_39
+    if-goto Display_37
     push argument 0
     push local 1
     push local 2
@@ -690,37 +678,37 @@ label Display_38
     push constant 0
     gt
     not
-    if-goto Display_41
+    if-goto Display_39
     push local 0
     call Display.drawPiece 1
     pop temp 0
-    goto Display_40
-label Display_41
-label Display_40
+    goto Display_38
+label Display_39
+label Display_38
     push local 2
     push constant 1
     add
     pop local 2
-    goto Display_38
-label Display_39
+    goto Display_36
+label Display_37
     push local 1
     push constant 1
     add
     pop local 1
-    goto Display_36
-label Display_37
+    goto Display_34
+label Display_35
     call Display.drawRanks 0
     pop temp 0
     call Display.drawFiles 0
     pop temp 0
     push constant 126
     pop local 3
-label Display_42
+label Display_40
     push local 3
     push constant 414
     lt
     not
-    if-goto Display_43
+    if-goto Display_41
     push local 3
     push constant 0
     push local 3
@@ -731,16 +719,16 @@ label Display_42
     push constant 32
     add
     pop local 3
-    goto Display_42
-label Display_43
+    goto Display_40
+label Display_41
     push constant 0
     pop local 3
-label Display_44
+label Display_42
     push local 3
     push constant 279
     lt
     not
-    if-goto Display_45
+    if-goto Display_43
     push constant 126
     push local 3
     push constant 382
@@ -751,8 +739,12 @@ label Display_44
     push constant 31
     add
     pop local 3
-    goto Display_44
-label Display_45
+    goto Display_42
+label Display_43
+    call Display.highlightSelectedSquare 0
+    pop temp 0
+    call Display.writeMessage 0
+    pop temp 0
     push constant 0
     return
 function Display.drawRanks 1
@@ -1382,7 +1374,7 @@ function Display.highlightSelectedSquare 2
     push constant 0
     gt
     not
-    if-goto Display_47
+    if-goto Display_45
     push static 0
     call Piece.getFile 1
     push constant 93
@@ -1455,9 +1447,9 @@ function Display.highlightSelectedSquare 2
     add
     call Screen.drawLine 4
     pop temp 0
-    goto Display_46
-label Display_47
-label Display_46
+    goto Display_44
+label Display_45
+label Display_44
     push constant 0
     return
 function Display.shadeSquare 2
@@ -1477,10 +1469,10 @@ function Display.shadeSquare 2
     pop local 1
     push argument 3
     not
-    if-goto Display_49
+    if-goto Display_47
     push argument 2
     not
-    if-goto Display_51
+    if-goto Display_49
     push local 0
     push local 1
     push constant 30
@@ -1571,99 +1563,6 @@ function Display.shadeSquare 2
     add
     call Screen.drawLine 4
     pop temp 0
-    goto Display_50
-label Display_51
-    push local 0
-    push local 1
-    push constant 1
-    add
-    push local 0
-    push constant 30
-    add
-    push local 1
-    push constant 30
-    add
-    call Screen.drawLine 4
-    pop temp 0
-    push local 0
-    push local 1
-    push constant 24
-    add
-    push local 0
-    push constant 8
-    add
-    push local 1
-    push constant 30
-    add
-    call Screen.drawLine 4
-    pop temp 0
-    push local 0
-    push constant 24
-    add
-    push local 1
-    push constant 1
-    add
-    push local 0
-    push constant 30
-    add
-    push local 1
-    push constant 8
-    add
-    call Screen.drawLine 4
-    pop temp 0
-    push local 0
-    push local 1
-    push constant 16
-    add
-    push local 0
-    push constant 16
-    add
-    push local 1
-    push constant 30
-    add
-    call Screen.drawLine 4
-    pop temp 0
-    push local 0
-    push constant 16
-    add
-    push local 1
-    push constant 1
-    add
-    push local 0
-    push constant 30
-    add
-    push local 1
-    push constant 16
-    add
-    call Screen.drawLine 4
-    pop temp 0
-    push local 0
-    push local 1
-    push constant 8
-    add
-    push local 0
-    push constant 24
-    add
-    push local 1
-    push constant 30
-    add
-    call Screen.drawLine 4
-    pop temp 0
-    push local 0
-    push constant 8
-    add
-    push local 1
-    push constant 1
-    add
-    push local 0
-    push constant 30
-    add
-    push local 1
-    push constant 24
-    add
-    call Screen.drawLine 4
-    pop temp 0
-label Display_50
     goto Display_48
 label Display_49
     push local 0
@@ -1676,9 +1575,102 @@ label Display_49
     push local 1
     push constant 30
     add
-    call Screen.drawRectangle 4
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push local 1
+    push constant 24
+    add
+    push local 0
+    push constant 8
+    add
+    push local 1
+    push constant 30
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push constant 24
+    add
+    push local 1
+    push constant 1
+    add
+    push local 0
+    push constant 30
+    add
+    push local 1
+    push constant 8
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push local 1
+    push constant 16
+    add
+    push local 0
+    push constant 16
+    add
+    push local 1
+    push constant 30
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push constant 16
+    add
+    push local 1
+    push constant 1
+    add
+    push local 0
+    push constant 30
+    add
+    push local 1
+    push constant 16
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push local 1
+    push constant 8
+    add
+    push local 0
+    push constant 24
+    add
+    push local 1
+    push constant 30
+    add
+    call Screen.drawLine 4
+    pop temp 0
+    push local 0
+    push constant 8
+    add
+    push local 1
+    push constant 1
+    add
+    push local 0
+    push constant 30
+    add
+    push local 1
+    push constant 24
+    add
+    call Screen.drawLine 4
     pop temp 0
 label Display_48
+    goto Display_46
+label Display_47
+    push local 0
+    push local 1
+    push constant 1
+    add
+    push local 0
+    push constant 30
+    add
+    push local 1
+    push constant 30
+    add
+    call Screen.drawRectangle 4
+    pop temp 0
+label Display_46
     push constant 0
     return
 function Display.shadeRank 1
@@ -1687,12 +1679,12 @@ function Display.shadeRank 1
     push argument 1
     call Screen.setColor 1
     pop temp 0
-label Display_52
+label Display_50
     push local 0
     push constant 105
     lt
     not
-    if-goto Display_53
+    if-goto Display_51
     push argument 0
     push local 0
     push constant 1
@@ -1704,8 +1696,8 @@ label Display_52
     push constant 1
     add
     pop local 0
-    goto Display_52
-label Display_53
+    goto Display_50
+label Display_51
     push constant 1
     neg
     call Screen.setColor 1
@@ -1718,12 +1710,12 @@ function Display.shadeFile 1
     push argument 1
     call Screen.setColor 1
     pop temp 0
-label Display_54
+label Display_52
     push local 0
     push constant 9
     lt
     not
-    if-goto Display_55
+    if-goto Display_53
     push local 0
     push argument 0
     push constant 0
@@ -1734,8 +1726,8 @@ label Display_54
     push constant 1
     add
     pop local 0
-    goto Display_54
-label Display_55
+    goto Display_52
+label Display_53
     push constant 1
     neg
     call Screen.setColor 1
