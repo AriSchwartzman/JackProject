@@ -6,7 +6,7 @@ class Controller {
 
     field Array allowedRanks, allowedFiles;
 
-    field boolean escaped;
+    static boolean escaped, turn;
 
     constructor Controller new() {
         let rankInput = 0;
@@ -15,6 +15,9 @@ class Controller {
         // At most, a queen can reach 27 squares
         let allowedRanks = Array.new(27);
         let allowedFiles = Array.new(27);
+
+        // false = white, true = black
+        let turn = false;
 
         let escaped = false;
         return this;
@@ -37,6 +40,8 @@ class Controller {
             if(fileInput > 0) {
                 do Display.shadeFile(fileInput, true);
             }
+            do Display.highlightSelectedSquare();
+            do Display.writeMessage();
         }
 
         if(input > 96 & (input < 105) & ~(input = fileInput)) {
@@ -46,6 +51,8 @@ class Controller {
             if(rankInput > 0) {
                 do Display.shadeRank(rankInput - 48, true);
             }
+            do Display.highlightSelectedSquare();
+            do Display.writeMessage();
         }
 
         if(input = 128 & (rankInput) > 0 & (fileInput > 0)) {
@@ -73,7 +80,17 @@ class Controller {
     }
 
     method Piece selectPiece(Board board) {
-        return board.getPiece(rankInput - 48, fileInput);
+        var Piece piece;
+
+        let piece = board.getPiece(rankInput - 48, fileInput);
+        if(piece.getColor() = turn) {
+            return piece;
+        }
+        return null;
+    }
+
+    function boolean getTurn() {
+        return turn;
     }
 
     method void clearInputs() {
@@ -109,6 +126,9 @@ class Controller {
 
             do piece.setRank(newRank);
             do piece.setFile(newFile);
+
+            let turn = ~turn;
+
             return false;
         }
         return true;
@@ -144,17 +164,11 @@ class Controller {
         var int counter;
         var Piece piece;
         let counter = 0;
-        do Output.printChar(file);
-        do Output.printInt(rank);
-        do Output.println();
 
         if(color) {
             if(file > 97) {
                 let piece = board.getPiece(rank + 1, file - 1);
                 if(piece > 0 & (~piece.getColor())) {
-                    do Output.printInt(allowedFiles[counter]);
-                    do Output.printInt(allowedRanks[counter]);
-                    do Output.println();
                     let allowedRanks[counter] = rank + 1;
                     let allowedFiles[counter] = file - 1;
                     let counter = counter + 1;
@@ -188,8 +202,8 @@ class Controller {
                 }
             }
         }
-				else {
-						if(file > 97) {
+		else {
+			if(file > 97) {
                 let piece = board.getPiece(rank - 1, file - 1);
                 if(piece > 0 & (~piece.getColor())) {
                     do Output.printInt(allowedFiles[counter]);

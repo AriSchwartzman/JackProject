@@ -1,4 +1,11 @@
 class Display {
+    static Piece selectedPiece;
+    static int messageLength;
+
+    function void setMessageLength(int length) {
+        let messageLength = length;
+        return;
+    }
 
     function void drawPiece(Piece piece) {
         var int counter0;
@@ -130,10 +137,61 @@ class Display {
         
     }
 
+    function void writeMessage() {
+        while(messageLength > 0) {
+            do Output.backSpace();
+            let messageLength = messageLength - 1;
+        }
+        if(Controller.getTurn()) {
+                do Output.printString("Black's Turn");
+        }
+        else {
+            do Output.printString("White's Turn");
+        }
+
+        do Output.println();
+
+        if(selectedPiece > 0) {
+            do Output.printChar(selectedPiece.getFile() - 32);
+            do Output.printInt(selectedPiece.getRank());
+            if(selectedPiece.getType() = 0) {
+                do Output.printString(" Pawn");
+                let messageLength = 20;
+            }
+            if(selectedPiece.getType() = 1) {
+                do Output.printString(" Knight");
+                let messageLength = 22;
+            }
+            if(selectedPiece.getType() = 2) {
+                do Output.printString(" Bishop");
+                let messageLength = 22;
+            }
+            if(selectedPiece.getType() = 3) {
+                do Output.printString(" Rook");
+                let messageLength = 20;
+            }
+            if(selectedPiece.getType() = 4) {
+                do Output.printString(" Queen");
+                let messageLength = 21;
+            }
+            if(selectedPiece.getType() = 5) {
+                do Output.printString(" King");
+                let messageLength = 20;
+            }
+        }
+        else {
+            let messageLength = 13;
+        }
+
+        return;
+
+    }
+
     function void drawBoard(Board board) {
         var Piece piece;
         var int rank, file, counter;
         do Screen.clearScreen();
+        do Display.writeMessage();
         let rank = 1;
         while(rank < 9) {
             let file = 97;
@@ -292,11 +350,31 @@ class Display {
         return;
     }
 
-    function void shadeSquare(int rank, int file, boolean direction, boolean erase) {
+    function void selectSquare(Piece piece) {
+        let selectedPiece = piece;
+        return;
+    }
+
+    function void highlightSelectedSquare() {
+        var int x, y;
+
+        if(selectedPiece > 0) {
+            let x = selectedPiece.getFile() - 93 * 32 - 2;
+            let y = selectedPiece.getRank() - 1 * 31;
+            do Screen.drawLine(x + 1, y + 1, x + 1, y + 30);
+            do Screen.drawLine(x + 1, y + 1, x + 31, y + 1);
+            do Screen.drawLine(x + 31, y + 1, x + 31, y + 30);
+            do Screen.drawLine(x + 1, y + 30, x + 31, y + 30);
+        }
+
+        return;
+    }
+
+    function void shadeSquare(int rank, int file, boolean direction, boolean drawLines) {
         var int x, y;
         let x = file - 93 * 32 - 1;
         let y = rank - 1 * 31;
-        if(erase) {
+        if(drawLines) {
             if(direction) {
                 do Screen.drawLine(x, y + 30, x + 30, y + 1);
                 do Screen.drawLine(x, y + 24, x + 24, y + 1);

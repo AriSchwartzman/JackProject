@@ -3,80 +3,58 @@ class Main {
         var Board board;
         var Controller controller;
         var Piece selectedPiece;
-        var boolean playing, emptySquare, invalidMove;
+        var boolean playing, emptySquare, invalidMove, escaped;
 
         let board = Board.new();
         let playing = true;
         let controller = Controller.new();
         do Sprites.init();
+        do Display.setMessageLength(0);
 
         while(playing) {
+            do Display.selectSquare(0);
             do Display.drawBoard(board);
 
             let emptySquare = true;
             let invalidMove = true;
+            let escaped = false;
+            
 
-            while(emptySquare) {
+            while(emptySquare & ~escaped) {
 
                 while(~controller.getInput(board)) {}
 
-                if(controller.getEscaped()) {
-                    let emptySquare = false;
-                    let invalidMove = false;
-                }
-                else {
-                    do Display.drawBoard(board);
+                let escaped = controller.getEscaped();
 
+                if(~escaped) {
                     let selectedPiece = controller.selectPiece(board);
+                    do Display.selectSquare(selectedPiece);
+                    do Display.drawBoard(board);
+                }
 
-                    if(selectedPiece > 0) {
-                        if(selectedPiece.getType() = 0) {
-                            do Output.printString("Pawn");
-                        }
-                        if(selectedPiece.getType() = 1) {
-                            do Output.printString("Knight");
-                        }
-                        if(selectedPiece.getType() = 2) {
-                            do Output.printString("Bishop");
-                        }
-                        if(selectedPiece.getType() = 3) {
-                            do Output.printString("Rook");
-                        }
-                        if(selectedPiece.getType() = 4) {
-                            do Output.printString("Queen");
-                        }
-                        if(selectedPiece.getType() = 5) {
-                            do Output.printString("King");
-                        }
-                        let emptySquare = false;
-                    }
-                    else {
-                        do Output.printString("Empty");
-                    }
-
-                    do Output.println();
-                    do Output.printInt(selectedPiece);
-                    do Output.println();
+                if(selectedPiece > 0) { 
+                    let emptySquare = false;
                 }
 
                 do controller.clearInputs();
 
             }
 
-            while(invalidMove) {
+
+            if(~escaped) {do Display.highlightSelectedSquare();}
+
+            while(invalidMove & ~escaped) {
                 while(~controller.getInput(board)) {}
 
-                if(controller.getEscaped()) {
-                    let emptySquare = false;
-                    let invalidMove = false;
-                }
-                else {
+                let escaped = controller.getEscaped();
+                if(~escaped) {
                     do Display.drawBoard(board);
                     let invalidMove = controller.movePiece(board, selectedPiece);
                 }
 
                 do controller.clearInputs();
             }
+
         }
 
         return;
