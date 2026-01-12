@@ -10,6 +10,11 @@ function Main.main 6
     pop temp 0
     call Display.setMessages 0
     pop temp 0
+    call Display.writeInstructions 0
+    pop temp 0
+    push local 1
+    call Controller.waitForInput 1
+    pop temp 0
 label Main_0
     push static 0
     not

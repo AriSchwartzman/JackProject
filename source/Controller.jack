@@ -11,8 +11,9 @@ class Controller {
     constructor Controller new() {
         let rankInput = 0;
         let fileInput = 0;
+
         // 2D array of ranks and files of allowed moves
-        // At most, a queen can reach 27 squares
+        // At most, one piece (queen) can reach 27 squares, so the array size is 27
         let allowedRanks = Array.new(27);
         let allowedFiles = Array.new(27);
 
@@ -23,11 +24,15 @@ class Controller {
         return this;
     }
 
+    // Loops until there is any keyboard input
     method void waitForInput() {
         while(~Keyboard.keyPressed()) {}
         return;
     }
 
+    // Gets the selected piece and returns true when a valid piece is selected
+    // Saves rank and file inputs to rankInput and fileInput fields respectively
+    // Also sets escaped to true if the player selects ESC
     method boolean getInput(Board board) {
         var int input;
         var boolean rightPressed, leftPressed, upPressed, downPressed;
@@ -141,18 +146,22 @@ class Controller {
         return false;
     }
 
+    // Returns selected rank
     method int getRankInput() {
         return rankInput - 48;
     }
 
+    // Returns selected file
     method char getFileInput() {
         return fileInput;
     }
 
+    // Returns if the player pressed ESC
     method boolean getEscaped() {
         return escaped;
     }
 
+    // Returns the selected piece
     method Piece selectPiece(Board board) {
         var Piece piece;
 
@@ -163,10 +172,12 @@ class Controller {
         return null;
     }
 
+    // Returns whoever's turn it is currently
     function boolean getTurn() {
         return turn;
     }
 
+    // Sets rankInput, fileInput, and escaped to 0 (or false)
     method void clearInputs() {
         let rankInput = 0;
         let fileInput = 0;
@@ -210,6 +221,7 @@ class Controller {
 
     }
 
+    // Sets the allowedRanks and allowedFiles arrays for a specific piece
     method void setAllowedMoves(Board board, Piece piece) {
         var boolean color;
         var int totalCount, type, rank, file;
@@ -249,6 +261,7 @@ class Controller {
         return;
     }
 
+    // Sets the allowedRanks and allowedFiles arrays for a pawn
     method void setPawnMove(Board board, int rank, int file, boolean color) {
         var int counter;
         var Piece piece;
@@ -295,9 +308,6 @@ class Controller {
 			if(file > 97) {
                 let piece = board.getPiece(rank - 1, file - 1);
                 if(piece > 0) {
-                    do Output.printInt(allowedFiles[counter]);
-                    do Output.printInt(allowedRanks[counter]);
-                    do Output.println();
                     let allowedRanks[counter] = rank - 1;
                     let allowedFiles[counter] = file - 1;
                     let counter = counter + 1;
@@ -335,6 +345,7 @@ class Controller {
         return;
     }
 
+    // Sets the allowedRanks and allowedFiles arrays for a knight
     method void setKnightMove(Board board, int rank, int file, boolean color) {
         var int counter;
         var Piece piece;
@@ -396,6 +407,7 @@ class Controller {
         return;
     }
 
+    // Sets the allowedRanks and allowedFiles arrays for a bishop
     method void setBishopMove(Board board, int rank, int file, boolean color) {
         
         var int counter, tempRank, tempFile;
@@ -467,6 +479,7 @@ class Controller {
         return;
     }
 
+    // Sets the allowedRanks and allowedFiles arrays for a rook
     method void setRookMove(Board board, int rank, int file, boolean color) {
         
         var int counter, tempRank, tempFile;
@@ -530,6 +543,7 @@ class Controller {
         return;
     }
 
+    // Sets the allowedRanks and allowedFiles arrays for a queen
     method void setQueenMove(Board board, int rank, int file, boolean color) {
         
         var int counter, tempRank, tempFile;
@@ -652,6 +666,8 @@ class Controller {
 
         return;
     }
+    
+    // Sets the allowedRanks and allowedFiles arrays for a king
     method void setKingMove(Board board, int rank, int file, boolean color) {
         
         var int counter;
@@ -718,19 +734,14 @@ class Controller {
         return;
     }
 
+    // Returns if a given move is allowed based on the allowedRanks and allowedFiles arrays
     method boolean moveIsAllowed(int newRank, int newFile) {
         var int counter;
 
         let counter = 0;
 
-        do Output.printChar(newFile);
-        do Output.printInt(newRank);
-        do Output.println();
 
         while(counter < 27) {
-            //do Output.printInt(allowedFiles[counter]);
-            //do Output.printInt(allowedRanks[counter]);
-            //do Output.println();
             if(allowedRanks[counter] = newRank & (allowedFiles[counter] = newFile)) {return true;}
             let counter = counter + 1;
         }

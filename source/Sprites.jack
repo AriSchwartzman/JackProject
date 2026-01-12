@@ -1,5 +1,8 @@
 class Sprites {
+    // The actual sprite being returned that shifts for the x position (48x28 pixels)
     static Array sprite;
+
+    // The template without any shifting to account for the x position (32x28 pixels)
     static Array template;
 
     function void init() {
@@ -8,7 +11,7 @@ class Sprites {
         return;
     }
 
-
+    // Sets the template to whatever sprite is needed
     function void setPawn(boolean color) {
         if(color) {
             // column 0
@@ -758,6 +761,7 @@ class Sprites {
         return;
     }
 
+    // Returns shifted sprite
     function Array getSprite(int identifier, int offset, boolean color) {
         var int counter0;
         var int counter1;

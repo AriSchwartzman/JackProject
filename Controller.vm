@@ -945,22 +945,6 @@ label Controller_67
     not
     if-goto Controller_87
     push local 0
-    push this 3
-    add
-    pop pointer 1
-    push that 0
-    call Output.printInt 1
-    pop temp 0
-    push local 0
-    push this 2
-    add
-    pop pointer 1
-    push that 0
-    call Output.printInt 1
-    pop temp 0
-    call Output.println 0
-    pop temp 0
-    push local 0
     push this 2
     add
     push argument 2
@@ -2652,14 +2636,6 @@ function Controller.moveIsAllowed 1
     pop pointer 0
     push constant 0
     pop local 0
-    push argument 2
-    call Output.printChar 1
-    pop temp 0
-    push argument 1
-    call Output.printInt 1
-    pop temp 0
-    call Output.println 0
-    pop temp 0
 label Controller_196
     push local 0
     push constant 27

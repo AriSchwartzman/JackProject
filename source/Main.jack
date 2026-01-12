@@ -1,3 +1,9 @@
+/**
+Main class
+Controls general structure of chess game
+Displays instructions, waits for player input, redraws board after movements, etc.
+One large control loop that runs until boolean 'playing' is set to false
+*/
 class Main {
     static boolean playing, winner;
 
@@ -7,60 +13,95 @@ class Main {
         var Piece selectedPiece;
         var boolean emptySquare, invalidMove, escaped;
 
+        // Initializes board
         let board = Board.new();
+
+        // Allows for game loop to occur
         let playing = true;
+
+        // Initializes the game controller (keeps track of movements)
         let controller = Controller.new();
+
+        // Sets static sprite arrays
         do Sprites.init();
+
+        // Sets static messages for throughout the game
         do Display.setMessages();
 
+        // Writes the instructions
+        do Display.writeInstructions();
+        
+        // Waits for any keyboard input
+        do controller.waitForInput();
+
+
+        // Loops as long as game continues
         while(playing) {
+            // Sets selected square to null
             do Display.selectSquare(0);
+
+            // Draws current state of the board
             do Display.drawBoard(board);
 
+            // Allows for loops to run
             let emptySquare = true;
             let invalidMove = true;
             let escaped = false;
             
-
+            // Loops until a valid piece is selected or ESC is pressed
             while(emptySquare & ~escaped) {
-
+                
+                // Loops until the player selects a square
                 while(~controller.getInput(board)) {}
 
+                // Checks to see if ESC was pressed
                 let escaped = controller.getEscaped();
 
+                // Makes both loops terminate and begin a new turn with no changes to the board if ESC is pressed
                 if(~escaped) {
                     let selectedPiece = controller.selectPiece(board);
                     do Display.selectSquare(selectedPiece);
                     do Display.drawBoard(board);
                 }
 
+                // Breaks out of the loop if the piece selected is valid
                 if(selectedPiece > 0) { 
                     let emptySquare = false;
                 }
 
+                // Deletes the player's input to either select another piece or select where the piece will move
                 do controller.clearInputs();
 
             }
 
-
+            // Highlights selected piece
             if(~escaped) {do Display.highlightSelectedSquare();}
 
+            // Loops until a valid move is selected or until ESC is pressed
             while(invalidMove & ~escaped) {
+
+                // Loops until the player selects a square
                 while(~controller.getInput(board)) {}
 
+                // Checks to see if ESC was pressed
                 let escaped = controller.getEscaped();
                 if(~escaped) {
+
+                    // Moves piece
                     do Display.drawBoard(board);
                     let invalidMove = controller.movePiece(board, selectedPiece);
                 }
-
+                
+                // Deletes the player's input to select where the piece will move
                 do controller.clearInputs();
             }
 
         }
 
+        // Only runs once the game is over
         do Screen.clearScreen();
-
+        
+        // Displays winner
         if(winner) {
             do Output.printString("Checkmate! Black Wins!");
         }
@@ -71,6 +112,7 @@ class Main {
         return;
     }
 
+    // Piece class uses this when a king (type = 5) is captured to end the game
     function void endGame(boolean winner) {
         let playing = false;
         return;

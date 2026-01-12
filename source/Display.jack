@@ -2,6 +2,41 @@ class Display {
     static Piece selectedPiece;
     static String whiteMessage, blackMessage, pawnMessage, knightMessage, bishopMessage, rookMessage, queenMessage, kingMessage;
 
+    // Writes instructions
+    function void writeInstructions() {
+        do Output.println();
+        do Output.printString("Welcome to JACK Chess!");
+        do Output.println();
+        do Output.println();
+        do Output.printString("Use the NUMBERS (1-8) and LETTERS (a-h) on your keyboard to");
+        do Output.println();
+        do Output.printString("  select the rank and file of the piece you want to move.");
+        do Output.println();
+        do Output.println();
+        do Output.printString("You can also use the ARROW keys!");
+        do Output.println();
+        do Output.println();
+        do Output.printString("Press ENTER to lock in your selections.");
+        do Output.println();
+        do Output.println();
+        do Output.printString("If you picked the wrong one, just press ESC.");
+        do Output.println();
+        do Output.println();
+        do Output.printString("In this version, nothing stops you from moving your king");
+        do Output.println();
+        do Output.printString("  into check, so be careful!");
+        do Output.println();
+        do Output.println();
+        do Output.printString("You also have to capture the king for the game to end");
+        do Output.println();
+        do Output.println();
+        do Output.printString("Good luck and have fun!");
+        do Output.moveCursor(22, 41);
+        do Output.printString("press any key to begin");
+
+        return;
+    }
+
     function void setMessages() {
         let whiteMessage = "White's Turn";
         let blackMessage = "Black's Turn";
@@ -14,6 +49,7 @@ class Display {
         return;
     }
 
+    // Draws a piece at its stored rank and file
     function void drawPiece(Piece piece) {
         var int counter0;
         var int counter0Plus28;
@@ -47,6 +83,7 @@ class Display {
         return;
     }
 
+    // Redraws the left half of a piece if it was damaged when another piece was drawn to its left
     function void repairPiece(Piece piece) {
         var int counter;
         var Array sprite;
@@ -144,6 +181,7 @@ class Display {
         
     }
 
+    // Writes the current player's turn and (if applicable) the selected piece
     function void writeMessage() {
 
         do Output.moveCursor(0,0);
@@ -183,6 +221,7 @@ class Display {
 
     }
 
+    // Draws the board along with the message and highlighted square
     function void drawBoard(Board board) {
         var Piece piece;
         var int rank, file, counter;
@@ -347,11 +386,13 @@ class Display {
         return;
     }
 
+    // Sets selectedPiece to whatever the player selected to highlight it
     function void selectSquare(Piece piece) {
         let selectedPiece = piece;
         return;
     }
 
+    // Highlights selected piece
     function void highlightSelectedSquare() {
         var int x, y;
 
@@ -367,6 +408,15 @@ class Display {
         return;
     }
 
+    /** Shades one square with diagonal lines
+    @param direction
+        true: bottom left to top right /////
+        false: top left to bottom right \\\\\
+
+    @param drawLines
+        true: draws lines to shade square
+        false: erases tile
+    */
     function void shadeSquare(int rank, int file, boolean direction, boolean drawLines) {
         var int x, y;
         let x = file - 93 * 32 - 1;
@@ -397,6 +447,7 @@ class Display {
         return;
     }
 
+    // Shades one rank of squares
     function void shadeRank(int rank, boolean erase) {
         var int file;
         let file = 97;
@@ -411,6 +462,7 @@ class Display {
         return;
     }
 
+    // Shades one file of squares
     function void shadeFile(int file, boolean erase) {
         var int rank;
         let rank = 1;

@@ -1,6 +1,7 @@
 class Board {
     field Array blackPieces, whitePieces, board;
 
+    // Constructs 8x8 array of Piece objects to represent the board
     constructor Board new() {
         var int counter;
         var Array tempArray;
@@ -55,18 +56,22 @@ class Board {
         return this;
     }
 
+    // Returns an array of all of the white pieces
     method Array getWhitePieces() {
         return whitePieces;
     }
 
+    // Returns an array of all of the black pieces
     method Array getBlackPieces() {
         return blackPieces;
     }
 
+    // Returns the 8x8 array of the board
     method Array getBoard() {
         return board;
     }
 
+    // Returns the piece at a given rank and file on the board
     method Piece getPiece(int rank, char file) {
         var Array tempArray;
 
@@ -74,6 +79,7 @@ class Board {
         return tempArray[file - 97];
     }
 
+    // Sets a given rank and file to a specific piece (for movement)
     method void setPiece(Piece piece, int rank, char file) {
         var Array tempArray;
 

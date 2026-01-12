@@ -10,8 +10,9 @@ types:
     5 = king
 
 ranks: 1 - 8
-files: a - h
+files: a - h (ASCII 97-104)
 colors: true = black, false = white
+captured: becomes true when an opposing piece enters the same square as this
 */
 
 class Piece {
@@ -27,6 +28,8 @@ class Piece {
         let captured = false;
         return this;
     }
+
+    // Series of getters and setters
 
     method int getType() {
         return type;
@@ -64,6 +67,8 @@ class Piece {
 
     method void capture() {
         let captured = true;
+
+        // Ends game if this piece being captured is a king
         if(type = 5) {
             do Main.endGame(~color);
         }
